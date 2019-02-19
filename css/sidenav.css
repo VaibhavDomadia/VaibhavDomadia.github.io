@@ -1,8 +1,10 @@
 /* Side Navigation */
 
 .sidenav {
+    background-color: white;
     position: fixed;
     width: 0px;
+    height: 85%;
 
     overflow: hidden;
     top: 15%;
@@ -18,7 +20,7 @@
 
     /* To Remove the underline of Link element */
     text-decoration: none;
-    
+
     text-decoration: none;
     color: black;
     font-family: verdana;

@@ -18,6 +18,9 @@
         <!-- CSS Link for TableGroup Content -->
         <link rel="stylesheet" href="css/taskGroup.css">
 
+        <!-- CSS Link for Task Window Manager -->
+        <link rel="stylesheet" href="css/taskWindow.css">
+
         <!-- Font Integration Font-Awesome link -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
@@ -52,19 +55,77 @@
                     <td>
                         <div class="tasknode" id="1">
                             <button onclick="onTick(id)" class="tick"><i class="fas fa-check"></i></button>
-                            <input type="text" class="inputstyle" placeholder="Enter Task">
+                            <input onclick="openTaskWindow(currentId)" type="text" class="inputstyle" placeholder="Enter Task">
+                            <div onclick="deleteTaskNode(id)">
+                                <i id="1" class="fas fa-trash deleteBox"></i>
+                            </div>
+
                             <div>
-                                <i onclick="deleteTaskNode(id)" class="fas fa-trash"></i>
+                                <div>
+                                    <i id="1" class="fas fa-palette colorPalette">
+                                </div>
+                                <div>
+                                    <button></button>
+                                    <button></button>
+                                    <button></button>
+                                </div>
                             </div>
                         </div>
                     </td>
                 </tr> -->
             </table>
+
+            <div id="taskWin" class="taskWindow hide">
+                <table class="taskWindowTable">
+                    <tr>
+                        <td><h3>Task:</h3></td>
+                        <td class="col2"><input type="text" placeholder="Enter Task"></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Color:</h3></td>
+                        <td class="col2">
+                            <div class="dropdown">
+                                <i class="fas fa-palette colorPalette"></i>
+                                <div class="content">
+                                    <div class="divideRow">
+                                        <button onclick="setColor('#ee6e73')" class="colorButton" style="background-color: #ee6e73"></button>
+                                        <button onclick="setColor('#4285f4')" class="colorButton" style="background-color: #4285f4"></button>
+                                        <button onclick="setColor('#34a853')" class="colorButton" style="background-color: #34a853"></button>
+                                        <button onclick="setColor('#fbbc05')" class="colorButton" style="background-color: #fbbc05"></button>
+                                    </div>
+                                    <div class="divideRow">
+                                        <button onclick="setColor('#7a85fc')" class="colorButton" style="background-color: #7a85fc"></button>
+                                        <button onclick="setColor('#029fcb')" class="colorButton" style="background-color: #029fcb"></button>
+                                        <button onclick="setColor('#3ccfcf')" class="colorButton" style="background-color: #3ccfcf"></button>
+                                        <button class="colorButton"></button>
+                                    </div>
+                                    <div class="divideRow">
+                                        <button class="colorButton"></button>
+                                        <button class="colorButton"></button>
+                                        <button class="colorButton"></button>
+                                        <button class="colorButton"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <button onclick="closeTaskWindow()" class="buttonWindow">Ok</button>
+            </div>
+            <div id="blurid" class="blur hide"></div>
+
             <div class="AddTask">
                 <button onclick="insertTaskNode()" class="but">+</button>
                 <label id="labelforAddButton" for="but">Add Task</label>
             </div>
         </div>
+
+
+        <!-- Script To change the color of the task -->
+        <script src="js/SetColor.js"></script>
+
+        <!-- Script to open and close Task Window Manager -->
+        <script src="js/taskWindow.js"></script>
 
         <!-- Script to execute when tick button is clicked -->
         <script src="js/tick.js"></script>

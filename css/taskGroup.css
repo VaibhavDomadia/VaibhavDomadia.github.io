@@ -40,7 +40,6 @@
 }
 
 .clicked {
-    background-color: #ee6e73;
     border: none;
 }
 
@@ -87,7 +86,7 @@
 .deleteBox {
     color: #555555;
     font-size: 24px;
-    margin: 0 0 0 16px;
+    margin: 0 16px;
     vertical-align: middle;
 }
 
@@ -95,6 +94,21 @@
     color: #000000;
 }
 
+
+
+
+/* Color Palette */
+
+.colorPaletteInside {
+    color: #555555;
+    font-size: 24px;
+    margin: 0 16px;
+    vertical-align: middle;
+}
+
+.colorPaletteInside:hover {
+    color: #000000;
+}
 
 
 

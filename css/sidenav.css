@@ -1,57 +1,75 @@
 /* Side Navigation */
 
 .sidenav {
-    background-color: white;
     position: fixed;
-    width: 0px;
-    height: 85%;
-    padding-top: 8px;
-
     overflow: hidden;
-    top: 15%;
+    top: 64px;
     left: 0%;
-    transition: 0.3s;
+    bottom: 0%;
+    width: 80px;
+    padding-top: 24px;
 }
 
+.sidenav:hover {
+    width: 250px;
+}
+
+.sidenav:hover .boundtitlenone {
+    display: inline-block;
+}
+
+/* .sidenav:hover .boundicon {
+    background-color: white;
+    color: black;
+} */
+
 .sidenav a {
-    display: block;
-    padding: 12px 18px;
+    display: grid;
+    grid-template-columns: 48px auto;
+    justify-items: center;
+    align-items: center;
     margin: 8px 16px;
     border-radius: 30px;
+    height: 48px;
+    background-color: #555555;
 
     /* To Remove the underline of Link element */
     text-decoration: none;
-
-    text-decoration: none;
-    color: black;
+    color: white;
     font-family: verdana;
     font-size: 16px;
+}
+
+.boundicon {
+    display: inline-grid;
+    background-color: #555555;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    justify-items: center;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+}
+
+.sidenav:hover .active .boundicon {
+    background-color: white;
+    color: black;
+}
+
+.boundtitle {
+    justify-self: start;
+    margin-left: 16px;
+}
+
+.boundtitlenone {
+    display: none;
+}
+
+.boundtitleinline {
+    display: inline-block;
 }
 
 .sidenav a:hover:not(.active) {
-    background-color: #ddd;
-}
-
-/* It is placed below hover, because it overwrites the background-color */
-.sidenav a.active {
-    background-color: #f6a2ad;
-}
-
-.sidenav table tr a {
-    display: block;
-    padding: 12px 18px;
-    margin: 8px 16px;
-    border-radius: 30px;
-
-
-    /* To Remove the underline of Link element */
-    text-decoration: none;
-
-    color: black;
-    font-family: verdana;
-    font-size: 16px;
-}
-
-.sidenav table tr a:hover {
-    background-color: #ddd;
+    background-color: rgba(85,85,85,0.7);
 }

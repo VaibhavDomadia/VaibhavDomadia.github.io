@@ -29,25 +29,53 @@
     <body>
         <header>
             <div class="bound">
-                <button onclick="openNavigation()" class="menu"><i class="fas fa-bars"></i></button>
+                <!-- <button onclick="openNavigation()" class="menubutton">
+                    <i class="fas fa-bars"></i>
+                </button> -->
+                <img src="images/TODO.svg" alt="" class="todoicon">
                 <!-- <button class="menu"><img src="images/menu.svg" alt=""></button> -->
-                <span class="headerTitle">
-                    <h2>TO DO</h2>
-                </span>
+                <div class="headertitle">
+                    <p style="display: inline;">
+                        <span style="color: #7a85fc;">T</span>
+                        <span style="color: #3ccfcf;">O</span>
+                        <span style="color: #ee6e73;">D</span>
+                        <span style="color: #ffc400;">O</span>
+                        <!-- <span style="color: #ff8d00;">O</span>
+                        <span style="color: #888888;">O</span>
+                        <span style="color: #fbbc05;">O</span> -->
+                    </p>
+                    <!-- TO DO -->
+                </div>
             </div>
         </header>
 
-        <div id="snav" class="sidenav">
-            <a class="active" href="index.html">Tasks</a>
-            <a href="#">Important</a>
+        <div onmouseover="openNavigation()" onmouseout="openNavigation()" id="snav" class="sidenav">
+            <a class="active" href="index.html">
+                <div class="boundicon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="boundtitle boundtitlenone">
+                    Tasks
+                </div>
+            </a>
+            <a href="#">
+                <div class="boundicon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="boundtitle boundtitlenone">
+                    Important
+                </div>
+            </a>
             <hr>
-            <table id="insertNodeTable"></table>
         </div>
 
         <!-- Script to execute when menu button is clicked -->
         <script src="js/openSidenav.js"></script>
 
         <div id="main">
+            <div id="grid-table" class="grid-task">
+
+            </div>
             <table id="TaskGroup">
                 <!-- This is just for understanding how the structure is, all these structure will be
                         dynammically made through the call to insertTaskNode() function call -->
@@ -58,17 +86,6 @@
                             <input onclick="openTaskWindow(currentId)" type="text" class="inputstyle" placeholder="Enter Task">
                             <div onclick="deleteTaskNode(id)">
                                 <i id="1" class="fas fa-trash deleteBox"></i>
-                            </div>
-
-                            <div>
-                                <div>
-                                    <i id="1" class="fas fa-palette colorPalette">
-                                </div>
-                                <div>
-                                    <button></button>
-                                    <button></button>
-                                    <button></button>
-                                </div>
                             </div>
                         </div>
                     </td>
@@ -112,11 +129,12 @@
                 </table>
                 <button onclick="closeTaskWindow()" class="buttonWindow">Ok</button>
             </div>
+
             <div id="blurid" class="blur hide"></div>
 
             <div class="AddTask">
                 <button onclick="insertTaskNode()" class="but">+</button>
-                <label id="labelforAddButton" for="but">Add Task</label>
+                <div class="AddTaskLabel">Add Task</div>
             </div>
         </div>
 

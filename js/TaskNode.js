@@ -5,11 +5,14 @@ let taskColor = [];
 // Function called when a task is inserted
 function insertTaskNode() {
     // table variable will store the object of table (TaskGroup)
-    let table = document.getElementById("TaskGroup");
+    //let table = document.getElementById("TaskGroup");
     // To insert a row at last position
-    let row = table.insertRow(currentId);
+    //let row = table.insertRow(currentId);
     // To insert a cell in current row
-    let cell = row.insertCell(0);
+    //let cell = row.insertCell(0);
+
+    // Grid view for Tasks
+    let gridtable = document.getElementById("grid-table");
 
     // Adding a Task Node and assigning id to each Task Node
     let tasknode = document.createElement("div");
@@ -28,11 +31,9 @@ function insertTaskNode() {
     // This Function is called to create a Trash Box add it to the particular task
     tasknode.appendChild(createTrashBox(currentId));
 
-    // This function is called to create color palette for every task
-    tasknode.appendChild(createColorPalette(currentId));
+    //cell.appendChild(tasknode);
 
-
-    cell.appendChild(tasknode);
+    gridtable.appendChild(tasknode);
 
     currentId++;
 }
@@ -40,8 +41,12 @@ function insertTaskNode() {
 
 // Function called when A task is deleted
 function deleteTaskNode(id) {
-    let table = document.getElementById("TaskGroup");
-    table.deleteRow(id);
+    //let table = document.getElementById("TaskGroup");
+    //table.deleteRow(id);
+    let gridtable = document.getElementById("grid-table");
+    let tasknode = gridtable.getElementsByClassName("tasknode")[id];
+    gridtable.removeChild(tasknode);
+    // gridtable.removeChild(document.getElementById(`${id}`));
     delIsTickedElement(id);
     for(let i=id+1 ; i<currentId ; i++) {
         let tasknode = document.getElementById(`${i}`);
@@ -95,18 +100,4 @@ function createTrashBox(currentId) {
     boundDelBox.style.display = "inline";
     boundDelBox.setAttribute("onclick",`deleteTaskNode(${currentId})`);
     return boundDelBox;
-}
-
-
-// Function for creating Color palette
-function createColorPalette(currentId) {
-    let colorPaletteIcon = document.createElement("i");
-    colorPaletteIcon.classList.add("fas");
-    colorPaletteIcon.classList.add("fa-palette");
-    colorPaletteIcon.classList.add("colorPaletteInside");
-    let boundColorPalette = document.createElement("div");
-    boundColorPalette.appendChild(colorPaletteIcon);
-    boundColorPalette.style.display = "inline";
-    // boundColorPalette.setAttribute("onclick","");
-    return boundColorPalette;
 }

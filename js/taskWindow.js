@@ -17,6 +17,7 @@ function openTaskWindow(id) {
     let inputTaskWindow = taskWindow.getElementsByTagName("input")[0];
     inputTaskWindow.style.borderBottomColor = taskColor[id];
     inputTaskWindow.value = inputElem.value;
+    inputTaskWindow.focus();
 }
 
 function closeTaskWindow() {

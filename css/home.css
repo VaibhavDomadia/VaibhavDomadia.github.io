@@ -1,0 +1,57 @@
+#heading {
+      font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 56px;
+      font-weight: normal;
+      justify-self: center;
+}
+
+#todoicon {
+      height: 100px;
+      width: 100px;
+      justify-self: center;
+}
+
+.grid-head {
+      display: grid;
+      margin: 150px 0px;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-content: center;
+      /* background-color: aqua; */
+}
+
+#signin {
+      background-color: #fbbc05;
+      padding: 8px;
+      border: none;
+      box-shadow: 0px 0px 8px #888888;
+      border-radius: 4px;
+      width: 100px;
+      justify-self: center;
+      font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 20px;
+      color: white;
+      outline: none;
+}
+
+#signin:hover {
+      box-shadow: 0px 0px 4px #888888;
+}
+
+.grid-home {
+      display: grid;
+      grid-template-columns: 4fr 6fr;
+}
+
+.grid-image {
+      display: grid;
+      padding: 16px;
+}
+
+#todopage {
+      width: 100%;
+      align-self: center;
+      justify-self: center;
+      box-shadow: 0px 0px 24px #888888;
+      border-radius: 8px;
+}

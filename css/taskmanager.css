@@ -1,0 +1,70 @@
+.task-manager {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr 1fr 10fr;
+      background-color: rgba(0,0,0,0.6);
+      position: fixed;
+      right: 0%;
+      top: 0%;
+      width: 0%;
+      height: 100%;
+      transition: width 0.5s;
+}
+
+.task-display {
+      display: grid;
+      grid-template-columns: 48px auto;
+      margin: 16px;
+      /* background-color: white; */
+      padding: 16px;
+      border-radius: 8px;
+}
+
+.tick-manager {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #fbbc05;
+      background-color: transparent;
+      outline: none;
+}
+
+.tick-manager:not(.clicked) > img {
+      visibility: hidden;
+}
+
+.tick-manager:hover > img {
+      visibility: visible;
+}
+
+.clicked {
+      background-color: #fbbc05;
+}
+
+#task-text {
+      /* padding: 8px; */
+      resize: none;
+      background-color: transparent;
+      font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 16px;
+      color: white;
+      border: none;
+      outline: none;
+}
+
+#closetaskmanagerbutton {
+      background-color: white;
+      border: none;
+      border-radius: 8px;
+      margin: 16px;
+      outline: none;
+}
+
+#closetaskmanagerbutton:hover {
+      background-color: #f3f3f3;
+}
+
+#closetaskmanagerbutton > img {
+      width: 36px;
+      height: 36px;
+}

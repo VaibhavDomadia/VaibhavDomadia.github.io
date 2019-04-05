@@ -1,0 +1,96 @@
+.sidenav {
+      position: fixed;
+      width: 20%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 12% 80% 8%;
+      border-right: 1px solid #dddddd;
+      top: 0%;
+      left: 0%;
+      height: 100%;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+@media screen and (max-width: 600px) {
+      .sidenav {
+            width: 0%;
+            display: none;
+      }
+
+      .header {
+            left: 0%;
+            width: 100%;
+      }
+
+      .task-layout {
+            left: 0%;
+            width: 100%;
+      }
+}
+
+.sidenav > h2 {
+      text-align: center;
+      font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: normal;
+      color: #fbbc05;
+}
+
+.task-group-container > a {
+      display: grid;
+      grid-template-columns: 20px auto;
+      text-decoration: none;
+      padding: 8px 32px;
+      margin: 4px 0px;
+}
+
+.task-group-active {
+      background-color: #f4f4f4;
+      border-left: 4px solid #fbbc05;
+}
+
+.task-group-container > a:hover {
+      background-color: #f8f8f8;
+}
+
+.task-group-container > a > h4 {
+      color: #444444;
+      font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: normal;
+      margin: 0px;
+      margin-left: 16px;
+}
+
+.task-group-container > a > img {
+      width: 20px;
+      height: 20px;
+      justify-self: center;
+      align-self: center;
+}
+
+.addnewtaskgroup {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      padding: 0px 8px;
+      align-content: center;
+}
+
+.addnewtaskgroup:hover {
+      background-color: #f8f8f8;
+}
+
+.addnewtaskgroup > h3 {
+      align-self: center;
+      color: #fbbc05;
+      line-height: 0px;
+      font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
+      font-weight: normal;
+      margin-left: 8px;
+}
+
+.addnewtaskgroup > img {
+      justify-self: center;
+      align-self: center;
+      width: 24px;
+      height: 24px;
+      color: #fbbc05;
+}

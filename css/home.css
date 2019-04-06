@@ -1,23 +1,26 @@
+body , html {
+      margin: 0px;
+}
+
 #heading {
       font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
       font-size: 56px;
       font-weight: normal;
-      justify-self: center;
 }
 
 #todoicon {
       height: 100px;
       width: 100px;
-      justify-self: center;
+      align-self: flex-end;
 }
 
 .grid-head {
       display: grid;
-      margin: 150px 0px;
+      /* margin: 150px 0px; */
       grid-template-columns: 1fr;
-      justify-content: center;
-      align-content: center;
-      /* background-color: aqua; */
+      height: 50%;
+      justify-items: center;
+      align-items: center;
 }
 
 #signin {
@@ -27,7 +30,6 @@
       box-shadow: 0px 0px 8px #888888;
       border-radius: 4px;
       width: 100px;
-      justify-self: center;
       font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
       font-size: 20px;
       color: white;
@@ -40,7 +42,13 @@
 
 .grid-home {
       display: grid;
+      justify-items: center;
+      align-items: center;
       grid-template-columns: 4fr 6fr;
+      top: 0%;
+      position: fixed;
+      height: 100%;
+      width: 100%;
 }
 
 .grid-image {
@@ -54,4 +62,32 @@
       justify-self: center;
       box-shadow: 0px 0px 24px #888888;
       border-radius: 8px;
+}
+
+@media only screen and (max-width: 800px) {
+      .grid-home {
+            grid-template-columns: 1fr;
+      }
+
+      .grid-head {
+            margin: 0px;
+            grid-template-rows: 1fr 1fr 1fr;
+      }
+
+      .grid-image {
+            display: none;
+      }
+
+      #heading {
+            font-size: 40px;
+      }
+
+      #signin {
+            font-size: 16px;
+      }
+
+      #todoicon {
+            width: 75px;
+            height: 75px;
+      }
 }

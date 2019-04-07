@@ -25,6 +25,10 @@
       color: #fbbc05;
 }
 
+.task-group-container {
+      overflow-y: scroll;
+}
+
 .task-group-container > a {
       display: grid;
       grid-template-columns: 20px auto;

@@ -6,11 +6,18 @@
 
       .boundinputfornewtask {
             left: 0%;
+            height: 15%;
+      }
+
+      .input-shadow {
+            width: 90%;
       }
 
       .task-container {
             left: 0%;
             width: 100%;
+            top: 25%;
+            max-height: 75%;
       }
 
       .icon {

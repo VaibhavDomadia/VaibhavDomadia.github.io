@@ -4,9 +4,25 @@
             padding: 0px;
             left: 0%;
             width: 100%;
+            background-color: #fbbc05;
+            box-shadow: 0px 0px 8px #888888;
+      }
+
+      .header > h1 {
+            color: white;
+            font-size: 24px;
       }
 
       #nav-drawer-button {
             display: grid;
+      }
+
+      #nav-drawer-button > img {
+            margin: 0px auto;
+      }
+
+      #logoutbut {
+            border: none;
+            color: #fbbc05;
       }
 }

@@ -25,6 +25,15 @@
       <!-- CSS link for task menu -->
       <link rel="stylesheet" href="css/taskmenu.css">
 
+      <!-- CSS link for media query header -->
+      <link rel="stylesheet" href="css/headermq.css">
+
+      <!-- CSS link for media query Sidenav -->
+      <link rel="stylesheet" href="css/sidenavmq.css">
+
+      <!-- CSS link for media query task Layout -->
+      <link rel="stylesheet" href="css/taskcontainermq.css">
+
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
@@ -43,7 +52,7 @@
             firebase.initializeApp(config);
       </script> -->
 
-      
+
 </head>
 
 <body>
@@ -67,6 +76,7 @@
                   </div>
             </div>
             <div class="header">
+                  <button id="nav-drawer-button" onclick="opensidenav()"><img src="images/bars-solid.svg" alt=""></button>
                   <h1>Important</h1>
                   <div class="theme-container" style="display: none;">
                         <button class="headerbutton" onclick="openmenufortheme()"><img src="images/palette-solid.svg"
@@ -125,6 +135,7 @@
       </div>
 
       <script src="js/header.js"></script>
+      <script src="js/sidenav.js"></script>
       <script src="js/taskgroupcontainer.js"></script>
       <script>
             let user;

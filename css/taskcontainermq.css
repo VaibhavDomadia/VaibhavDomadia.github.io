@@ -1,0 +1,29 @@
+@media only screen and (max-width: 800px) {
+      .task-layout {
+            left: 0%;
+            width: 100%;
+      }
+
+      .boundinputfornewtask {
+            left: 0%;
+      }
+
+      .task-container {
+            left: 0%;
+            width: 100%;
+      }
+
+      .icon {
+            width: 16px;
+            height: 16px;
+      }
+
+      .task {
+            grid-template-columns: 36px auto 36px 36px 36px;
+      }
+
+      .tick {
+            width: 20px;
+            height: 20px;
+      }
+}

@@ -1,16 +1,25 @@
+.icon {
+      height: 24px;
+      width: 24px;
+}
+
 .task-layout {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 3fr 18fr;
+      /* grid-template-rows: 3fr 18fr; */
       position: fixed;
       left: 20%;
       top: 10%;
       width: 80%;
       height: 90%;
+      z-index: 1;
 }
 
 .boundinputfornewtask {
       padding: 16px;
+      top: 10%;
+      left: 20%;
+      height: 10%;
 }
 
 .input-shadow {
@@ -58,6 +67,8 @@
 
 .task {
       display: grid;
+      justify-items: center;
+      align-items: center;
       grid-template-columns: 48px auto 48px 48px 48px;
 }
 
@@ -78,19 +89,26 @@
 }
 
 .textfortask {
-      align-self: center;
+      justify-self: baseline;
       font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .tick {
-      justify-self: center;
-      align-self: center;
-      width: 24px;
-      height: 24px;
+      display: grid;
+      /* width: 24px; */
+      /* height: 24px; */
       border-radius: 50%;
       border: 2px solid #fbbc05;
       background-color: transparent;
       outline: none;
+}
+
+.tick > img {
+      justify-self: center;
+      align-self: center;
+      width: 8px;
+      height: 8px;
+      margin: 0px auto;
 }
 
 .tick:not(.ticked) > img {
@@ -106,25 +124,19 @@
 }
 
 .editicon {
-      justify-self: center;
-      align-self: center;
-      width: 24px;
-      height: 24px;
+      /* width: 24px; */
+      /* height: 24px; */
       visibility: hidden;
 }
 
 .importanticon {
-      justify-self: center;
-      align-self: center;
-      width: 24px;
-      height: 24px;
+      /* width: 24px; */
+      /* height: 24px; */
       visibility: hidden;
 }
 
 .deleteicon {
-      justify-self: center;
-      align-self: center;
-      width: 24px;
-      height: 24px;
+      /* width: 24px; */
+      /* height: 24px; */
       visibility: hidden;
 }

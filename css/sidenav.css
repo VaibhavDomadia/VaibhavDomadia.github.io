@@ -8,24 +8,14 @@
       top: 0%;
       left: 0%;
       height: 100%;
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      background-color: white;
 }
 
-@media screen and (max-width: 600px) {
-      .sidenav {
-            width: 0%;
-            display: none;
-      }
-
-      .header {
-            left: 0%;
-            width: 100%;
-      }
-
-      .task-layout {
-            left: 0%;
-            width: 100%;
-      }
+.sidenavopen {
+      position: absolute;
+      width: 60%;
+      z-index: 2;
 }
 
 .sidenav > h2 {

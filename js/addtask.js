@@ -27,6 +27,7 @@ class Task {
             let tick = document.createElement("button");
             tick.setAttribute("onclick",`onTick(${this.id})`);
             tick.classList.add("tick");
+            tick.classList.add('icon');
 
             if(this.completed) {
                   console.log(this.completed);
@@ -62,6 +63,7 @@ class Task {
             let editicon = document.createElement("img");
             editicon.setAttribute("src","images/pen-solid.svg");
             editicon.classList.add("editicon");
+            editicon.classList.add("icon");
             editicon.setAttribute("onclick",`opentaskmanager(${this.id})`);
 
             task.appendChild(editicon);
@@ -77,6 +79,7 @@ class Task {
             }
             importanticon.setAttribute("onclick",`onImportant(this, ${this.important}, ${this.id})`);
             importanticon.classList.add("importanticon");
+            importanticon.classList.add("icon");
 
             task.appendChild(importanticon);
       }
@@ -85,6 +88,7 @@ class Task {
             let deleteicon = document.createElement("img");
             deleteicon.setAttribute("src","images/trash-solid.svg");
             deleteicon.classList.add("deleteicon");
+            deleteicon.classList.add("icon");
             deleteicon.setAttribute("onclick",`removeTask(${this.id})`);
 
             task.appendChild(deleteicon);

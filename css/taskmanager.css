@@ -5,10 +5,11 @@
       background-color: rgba(0,0,0,0.6);
       position: fixed;
       right: 0%;
-      top: 0%;
+      top: 10%;
       width: 0%;
       height: 100%;
       transition: width 0.5s;
+      z-index: 3;
 }
 
 .task-display {

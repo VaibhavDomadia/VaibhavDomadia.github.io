@@ -109,11 +109,12 @@
       border: 2px solid #fbbc05;
       background-color: transparent;
       outline: none;
+      padding: 0px;
 }
 
 .tick > img {
-      justify-self: center;
-      align-self: center;
+      /* justify-self: center; */
+      /* align-self: center; */
       width: 8px;
       height: 8px;
       margin: 0px auto;

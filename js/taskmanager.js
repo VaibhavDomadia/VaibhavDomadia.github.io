@@ -1,6 +1,6 @@
 let currentid;
 
-let windowsize = window.matchMedia("(max-width: 500px)");
+let windowsize = window.matchMedia("(max-width: 800px)");
 
 let tasksel;
 

@@ -2,11 +2,13 @@
       .task-layout {
             left: 0%;
             width: 100%;
+            top: 50px;
       }
 
       .boundinputfornewtask {
             left: 0%;
-            height: 15%;
+            /* height: 15%; */
+            height: 80px;
       }
 
       .input-shadow {
@@ -16,7 +18,8 @@
       .task-container {
             left: 0%;
             width: 100%;
-            top: 25%;
+            /* top: 25%; */
+            top: 130px;
             max-height: 75%;
       }
 

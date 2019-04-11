@@ -6,6 +6,7 @@
             width: 100%;
             background-color: #fbbc05;
             box-shadow: 0px 0px 20px 0 rgba(0,0,0,0.4);
+            height: 50px;
       }
 
       .header > h1 {

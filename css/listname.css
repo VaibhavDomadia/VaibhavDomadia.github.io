@@ -24,7 +24,7 @@
       color: #fbbc05;
       grid-column: 1/3;
       justify-self: baseline;
-      padding-left: 8px;
+      padding: 8px;
       margin: 0px;
       font-weight: normal;
 }
@@ -36,10 +36,11 @@
 
 .listname > input {
       padding: 8px;
+      margin: 8px;
       border: none;
       border-bottom: 2px solid #fbbc05;
-      justify-self: baseline;
-      width: 100%;
+      /* justify-self: baseline; */
+      width: 95%;
       outline: none;
 }
 

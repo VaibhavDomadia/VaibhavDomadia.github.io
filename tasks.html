@@ -37,6 +37,12 @@
       <!-- CSS for scrollbar -->
       <link rel="stylesheet" href="css/scroll.css">
 
+      <!-- CSS for Naming new Task List -->
+      <link rel="stylesheet" href="css/listname.css">
+
+      <!-- CSS for Naming new Task List media query -->
+      <link rel="stylesheet" href="css/listnamemq.css">
+
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
@@ -72,7 +78,7 @@
                         </a>
                         <hr style="width: 90%;">
                   </div>
-                  <div class="addnewtaskgroup" onclick="addnewtaskgroup()">
+                  <div class="addnewtaskgroup" onclick="openlistname()">
                         <img src="images/plus-solid-yellow.svg" alt="">
                         <h3>New List</h3>
                   </div>
@@ -122,6 +128,18 @@
                         </ul>
                   </div>
             </div>
+            <div id="listnamebound">
+                  <div class="blur"></div>
+                  <div class="listname">
+                        <h3>List Name</h3>
+                        <img src="images/tasks-solid.svg" alt="">
+                        <input type="text" placeholder="Enter List Name" id="inputfortaskgroup">
+                        <div class="boundbutton">
+                              <button onclick="closelistname()">Cancel</button>
+                              <button onclick="addnewtasklist()">Save</button>
+                        </div>
+                  </div>
+            </div>
       </div>
 
       <div class="task-manager" id="taskmanager">
@@ -135,6 +153,8 @@
             <button onclick="closetaskmanager()" id="closetaskmanagerbutton"><img src="images/arrow-right-solid.svg"
                         alt="Close"></button>
       </div>
+
+
 
       <script src="js/header.js"></script>
       <script src="js/sidenav.js"></script>

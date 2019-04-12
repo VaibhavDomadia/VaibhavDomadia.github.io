@@ -151,6 +151,14 @@ function onTick(id) {
       })
 }
 
+let inputnewtask = document.getElementById('inputfornewtask');
+inputnewtask.addEventListener("keyup", event => {
+      if(event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById('butfornewtask').click();
+      }
+})
+
 function addTask() {
       let taskContainer = document.getElementById("taskcontainer");
       let inputfornewtask = document.getElementById("inputfornewtask");

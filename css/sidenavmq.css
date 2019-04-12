@@ -6,7 +6,7 @@
 
       .sidenavopen {
             position: absolute;
-            width: 60%;
+            width: 70%;
             z-index: 4;
             visibility: visible;
             transition: 0.3s;

@@ -4,7 +4,9 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Document</title>
+      <title>To-Do</title>
+
+      <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
       <script>
@@ -20,8 +22,13 @@
                   });
             }
       </script>
-      <script>
-            window.location = "home.html";
-      </script>
+      <div class="grid-home">
+            <div class="grid-head">
+                  <img src="images/check-solid-yellow.svg" alt="" id="todoicon">
+                  <h1 id="heading">To Do List</h1>
+                  <button id="signin" onclick="window.location = 'login.html'">Sign In</button>
+            </div>
+            <div class="grid-image"><img src="images/home-todo-image.png" alt="" id="todopage"></div>
+      </div>
 </body>
 </html>

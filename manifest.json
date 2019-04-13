@@ -8,23 +8,23 @@
       "background_color": "#FFFFFF",
       "icons": [
             {
-                  "src": "images/check-solid-yellow.svg",
+                  "src": "images/todo.png",
                   "sizes": "128x128"
             },
             {
-                  "src": "images/todo192.png",
+                  "src": "images/todo.png",
                   "sizes": "192x192"
             },
             {
-                  "src": "images/check-solid-yellow.svg",
+                  "src": "images/todo.png",
                   "sizes": "256x256"
             },
             {
-                  "src": "images/check-solid-yellow.svg",
+                  "src": "images/todo.png",
                   "sizes": "384x384"
             },
             {
-                  "src": "images/todo512.png",
+                  "src": "images/todo.png",
                   "sizes": "512x512"
             }
       ]

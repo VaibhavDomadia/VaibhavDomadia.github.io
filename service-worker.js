@@ -38,6 +38,15 @@ const precacheResources = [
       'images/th-large-solid.svg',
       'images/trash-solid-white.svg',
       'images/trash-solid.svg',
+      'js/addtask.js',
+      'js/authentication.js',
+      'js/database.js',
+      'js/header.js',
+      'js/important.js',
+      'js/sidenav.js',
+      'js/taskgroupcontainer.js',
+      'js/taskmanager.js',
+      'js/tasks.js'
 ];
 
 self.addEventListener('install', event => {

@@ -6,6 +6,15 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>To-Do</title>
 
+      <style>
+            .banner {
+                  align-content: center;
+                  display: none;
+                  justify-content: center;
+                  width: 100%;
+            }
+      </style>
+
       <link rel="stylesheet" href="css/home.css">
 
       <link rel="manifest" href="manifest.json">
@@ -27,8 +36,8 @@
       <link rel="apple-touch-icon" sizes="256x256" href="/images/check-solid-yellow.svg">
       <link rel="icon" sizes="384x384" href="/images/check-solid-yellow.svg">
       <link rel="apple-touch-icon" sizes="384x384" href="/images/check-solid-yellow.svg">
-      <link rel="icon" sizes="512x512" href="/images/check-solid-yellow.svg">
-      <link rel="apple-touch-icon" sizes="512x512" href="/images/check-solid-yellow.svg">
+      <link rel="icon" sizes="512x512" href="/images/todo512.png">
+      <link rel="apple-touch-icon" sizes="512x512" href="/images/todo512.png">
 </head>
 <body>
       <script>
@@ -52,5 +61,41 @@
             </div>
             <div class="grid-image"><img src="images/home-todo-image.png" alt="" id="todopage"></div>
       </div>
+      <section id="installBanner" class="banner">
+            <button id="installBtn">Install app</button>
+      </section>
+
+      <script>
+            let deferredPrompt;
+            window.addEventListener('beforeinstallprompt', event => {
+
+                  // Prevent Chrome 67 and earlier from automatically showing the prompt
+                  event.preventDefault();
+
+                  // Stash the event so it can be triggered later.
+                  deferredPrompt = event;
+
+                  // Attach the install prompt to a user gesture
+                  document.querySelector('#installBtn').addEventListener('click', event => {
+
+                  // Show the prompt
+                  deferredPrompt.prompt();
+
+                  // Wait for the user to respond to the prompt
+                  deferredPrompt.userChoice
+                  .then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the A2HS prompt');
+                        } else {
+                        console.log('User dismissed the A2HS prompt');
+                        }
+                        deferredPrompt = null;
+                  });
+                  });
+
+                  // Update UI notify the user they can add to home screen
+                  document.querySelector('#installBanner').style.display = 'flex';
+            });
+      </script>
 </body>
 </html>

@@ -21,7 +21,23 @@ const precacheResources = [
       'images/arrow-right-solid.svg',
       'images/bars-solid-white.svg',
       'images/bars-solid.svg',
-      'images/check-solid-white.svg'
+      'images/check-solid-white.svg',
+      'images/check-solid-yellow.svg',
+      'images/check-solid.svg',
+      'images/circle-regular.svg',
+      'images/home-todo-image.png',
+      'images/palette-solid.svg',
+      'images/pen-solid.svg',
+      'images/plus-solid-yellow.svg',
+      'images/star-regular-dark.svg',
+      'images/star-regular-white.svg',
+      'images/star-regular.svg',
+      'images/star-solid-yellow.svg',
+      'images/star-solid.svg',
+      'images/tasks-solid.svg',
+      'images/th-large-solid.svg',
+      'images/trash-solid-white.svg',
+      'images/trash-solid.svg',
 ];
 
 self.addEventListener('install', event => {

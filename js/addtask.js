@@ -1,9 +1,10 @@
 class Task {
-      constructor(id, value, state, stateforimportant) {
+      constructor(id, value, state, stateforimportant, taskdate) {
             this.id = id;
             this.value = value;
             this.completed = state;
             this.important = stateforimportant;
+            this.taskdate = taskdate;
       }
 
       //Metods Related To Creation Of a new Task.
@@ -146,7 +147,7 @@ function onTick(id) {
             text.style.textDecoration = "line-through";
       }
       taskObject.completed = !taskObject.completed;
-      let taskref = rootdbref.child('task' + id).update({
+      rootdbref.child('task' + id).update({
             "completed": taskObject.completed
       })
 }
@@ -160,14 +161,9 @@ inputnewtask.addEventListener("keyup", event => {
 })
 
 function addTask() {
-      let taskContainer = document.getElementById("taskcontainer");
       let inputfornewtask = document.getElementById("inputfornewtask");
       if(inputfornewtask.value == "")
             return;
-      /*let newTask = new Task(nooftasks, inputfornewtask.value, false);
-      newTask.buildTask(taskContainer);
-      tasklist.push(newTask);*/
-
       nooftasks++;
 
       let dbtaskentry = rootdbref.child('task' + nooftasks);
@@ -175,6 +171,12 @@ function addTask() {
       dbtaskentry.child('value').set(inputfornewtask.value);
       dbtaskentry.child('completed').set(false);
       dbtaskentry.child('important').set(false);
+      let dateref = dbtaskentry.child('taskdate');
+      let d = new Date();
+      dateref.child('date').set(d.getDate());
+      dateref.child('month').set(d.getMonth());
+      dateref.child('year').set(d.getFullYear());
+      dateref.child('weekday').set(d.getDay());
       obtainnooftasks.set(nooftasks);
 
       inputfornewtask.value = "";
@@ -184,8 +186,6 @@ function removeTask(id) {
       let taskContainer = document.getElementById("taskcontainer");
       let task = document.getElementById(id);
       rootdbref.child('task' + id).remove();
-      //nooftasks--;
-      //obtainnooftasks.set(nooftasks);
       taskContainer.removeChild(task);
       console.log(tasklist);
       tasklist.splice(id, 1);

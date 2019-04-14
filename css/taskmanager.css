@@ -1,13 +1,14 @@
 .task-manager {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 2fr 1fr 10fr;
-      background-color: rgba(0,0,0,0.6);
+      grid-template-rows: 100px auto 60px 60px 60px;
+      align-items: center;
+      background-color: white;
       position: fixed;
       right: 0%;
       top: 10%;
       width: 0%;
-      height: 100%;
+      bottom: 0%;
       transition: width 0.5s;
       z-index: 3;
 }
@@ -15,9 +16,7 @@
 .task-display {
       display: grid;
       grid-template-columns: 48px auto;
-      margin: 16px;
-      /* background-color: white; */
-      padding: 16px;
+      align-self: baseline;
       border-radius: 8px;
 }
 
@@ -48,24 +47,55 @@
       background-color: transparent;
       font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
       font-size: 16px;
-      color: white;
       border: none;
       outline: none;
 }
 
 #closetaskmanagerbutton {
-      background-color: white;
+      background-color: transparent;
+      justify-self: start;
+      align-self: baseline;
       border: none;
-      border-radius: 8px;
-      margin: 16px;
       outline: none;
 }
 
-#closetaskmanagerbutton:hover {
-      background-color: #f3f3f3;
+#closetaskmanagerbutton > img {
+      width: 24px;
+      height: 24px;
 }
 
-#closetaskmanagerbutton > img {
-      width: 36px;
-      height: 36px;
+.taskmanagerbut {
+      display: grid;
+      grid-template-columns: 30px auto;
+      justify-items: center;
+      align-items: center;
+      padding: 8px;
+      background-color: white;
+      box-shadow: 0px 0px 10px 0 rgba(0,0,0,0.15);
+      border-radius: 4px;
+}
+
+.taskmanagerbut > img {
+      width: 20px;
+      height: 20px;
+}
+
+.taskmanagerbut > p {
+      color: #666666;
+      font-size: 16px;
+      justify-self: baseline;
+      padding-left: 8px;
+      margin: 0px;
+}
+
+#taskmanagerdatebound {
+      bottom: 0%;
+      left: 0%;
+      width: 100%;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
+}
+
+#taskmanagerdatebound > p {
+      margin: 0px;
+      padding: 8px;
 }

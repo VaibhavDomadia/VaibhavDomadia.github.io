@@ -18,11 +18,23 @@
       z-index: 4;
 }
 
-.sidenav > h2 {
-      text-align: center;
+.boundsidenavheader {
+      display: grid;
+      grid-template-columns: 48px auto;
+      justify-items: center;
+      align-items: center;
+}
+
+#closesidenavbut {
+      width: 24px;
+      height: 24px;
+}
+
+.sidenav h2 {
       font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
       font-weight: normal;
       color: #fbbc05;
+      justify-self: baseline;
 }
 
 .task-group-container {

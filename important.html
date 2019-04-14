@@ -22,6 +22,9 @@
       <!-- CSS link for task manager -->
       <link rel="stylesheet" href="css/taskmanager.css">
 
+      <!-- CSS link for task manager media query -->
+      <link rel="stylesheet" href="css/taskmanagermq.css">
+
       <!-- CSS link for task menu -->
       <link rel="stylesheet" href="css/taskmenu.css">
 
@@ -67,7 +70,10 @@
 <body>
       <div class="grid-layout-page" id="pagelayout">
             <div class="sidenav" id="sidenavigation" ontouchmove="opensidenav()">
-                  <h2>TO DO</h2>
+                  <div class="boundsidenavheader">
+                        <img src="images/times-solid.svg" alt="" id="closesidenavbut" onclick="opensidenav()">
+                        <h2>TO DO</h2>
+                  </div>
                   <div class="task-group-container" id="taskgroupcont">
                         <a href="tasks.html">
                               <img src="images/check-solid.svg" alt="">
@@ -152,6 +158,8 @@
                   <!-- <input type="text" id="task-text"> -->
                   <textarea name="" cols="30" rows="2" id="task-text"></textarea>
             </div>
+            <button>Mark as Important</button>
+            <button>Delete Task</button>
             <button onclick="closetaskmanager()" id="closetaskmanagerbutton"><img src="images/arrow-right-solid.svg"
                         alt="Close"></button>
       </div>

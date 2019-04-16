@@ -127,16 +127,15 @@
       box-shadow: 0px 4px 8px 0 rgba(0,0,0,0.15);
       z-index: 3;
       background-color: white;
-      width: 200px;
+      width: 240px;
       right: 0;
       border-radius: 4px;
 }
 
 .dropbut {
       background-color: white;
-      padding: 8px;
+      padding: 12px 8px;
       width: 100%;
-      font-size: 14px;
       display: grid;
       grid-template-columns: 36px auto;
 }
@@ -147,6 +146,7 @@
 
 .dropbut > p {
       margin: 0px;
+      font-size: 16px;
 }
 
 .show {

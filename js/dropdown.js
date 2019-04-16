@@ -1,3 +1,4 @@
+// This shows the state to show or hide completed task. true for hide and false for show.
 let stateofshoworhide = false;
 let hctnode = document.getElementsByClassName("dropbut")[0];
 let hctnodetext = hctnode.getElementsByTagName("p")[0];

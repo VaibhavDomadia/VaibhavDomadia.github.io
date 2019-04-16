@@ -8,7 +8,7 @@ class Task {
       }
 
       //Metods Related To Creation Of a new Task.
-      
+
       buildTask(taskContainer) {
             let task = document.createElement("div");
             task.classList.add("task");
@@ -31,7 +31,6 @@ class Task {
             tick.classList.add('icon');
 
             if(this.completed) {
-                  console.log(this.completed);
                   tick.classList.add('ticked');
             }
 
@@ -58,6 +57,7 @@ class Task {
             let task = document.getElementById(id);
             let text = task.getElementsByTagName("p")[0];
             text.innerHTML = value;
+            this.value = value;
       }
 
       createEditIcon(task) {
@@ -167,6 +167,9 @@ function onTick(id) {
       else {
             tick.classList.add("ticked");
             text.style.textDecoration = "line-through";
+            if(stateofshoworhide) {
+                  taskObject.hidetask();
+            }
       }
       taskObject.completed = !taskObject.completed;
       rootdbref.child('task' + id).update({

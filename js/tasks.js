@@ -7,10 +7,6 @@ let tasklist = [];
 let taskContainer = document.getElementById('taskcontainer');
 
 function initTasks() {
-      // Getting No of tasks user currently has in this taskgroup
-      // obtainnooftasks.on('child_added', function(snap) {
-      //       updatenooftasks(snap.val());
-      // })
       obtainnooftasks.on('value', function(snap) {
             updatenooftasks(snap.val());
       });
@@ -23,7 +19,6 @@ function initTasks() {
 
       // Creation of tasks
       rootdbref.on('child_added', snap => {
-            console.log("You called child added");
             let id = snap.child("id").val();
             let value = snap.child("value").val();
             let completed = snap.child("completed").val();
@@ -34,8 +29,6 @@ function initTasks() {
             let weekday = snap.child("taskdate").child("weekday").val();
             let taskdate = [date, month, year, weekday];
             if(id != null) {
-                  console.log(id + " " + value + " " + completed + " " + important + " " + date);
-
                   let newTask = new Task(id, value, completed, important, taskdate);
                   newTask.buildTask(taskContainer);
                   tasklist.push(newTask);
@@ -44,29 +37,22 @@ function initTasks() {
 
       // On Updating Child
       rootdbref.on('child_changed' , snap => {
-            console.log("You called child changed");
             let id = snap.child("id").val();
             let value = snap.child("value").val();
             let completed = snap.child("completed").val();
             let important = snap.child("important").val();
-            let tasksel;
+            let taskselec;
             if(id != null) {
-                  console.log(id + " " + value + " " + completed + " " + important);
-
                   for(let i=0 ; i<tasklist.length ; i++) {
                         if(id === tasklist[i].id) {
-                              tasksel = tasklist[i];
+                              taskselec = tasklist[i];
                               break;
                         }
                   }
 
-                  tasksel.updateText(value, id);
-                  tasksel.updateState(completed);
-                  tasksel.updateImportance(important);
-
-                  //let newTask = new Task(id, value, completed);
-                  //newTask.buildTask(taskContainer);
-                  //tasklist.push(newTask);
+                  taskselec.updateText(value, id);
+                  taskselec.updateState(completed);
+                  taskselec.updateImportance(important);
             }
       });
 };

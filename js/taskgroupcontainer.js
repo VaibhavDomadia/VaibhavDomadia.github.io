@@ -36,5 +36,5 @@ function closelistname() {
 function addnewtaskgroup() {
       let taskgroupcontainer = document.getElementById("taskgroupcont");
 
-
+      
 }

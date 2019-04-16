@@ -8,7 +8,7 @@ class Task {
       }
 
       //Metods Related To Creation Of a new Task.
-
+      
       buildTask(taskContainer) {
             let task = document.createElement("div");
             task.classList.add("task");

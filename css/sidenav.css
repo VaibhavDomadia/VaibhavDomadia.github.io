@@ -15,7 +15,7 @@
 .sidenavopen {
       position: absolute;
       width: 60%;
-      z-index: 4;
+      z-index: 5;
 }
 
 .boundsidenavheader {
@@ -23,6 +23,7 @@
       grid-template-columns: 48px auto;
       justify-items: center;
       align-items: center;
+      box-shadow: 0px 0px 4px 0 rgba(0,0,0,0.1);
 }
 
 #closesidenavbut {
@@ -45,7 +46,13 @@
       display: grid;
       grid-template-columns: 20px auto;
       text-decoration: none;
-      padding: 8px 32px;
+      padding: 10px 32px;
+}
+
+#division {
+      height: 0.5px;
+      width: 100%;
+      background-color: #cfcfcf;
       margin: 4px 0px;
 }
 
@@ -78,6 +85,7 @@
       grid-template-columns: 1fr 5fr;
       padding: 0px 8px;
       align-content: center;
+      box-shadow: 0px 0px 4px 0 rgba(0,0,0,0.1);
 }
 
 .addnewtaskgroup:hover {

@@ -69,7 +69,7 @@
 
 <body>
       <div class="grid-layout-page" id="pagelayout">
-            <div class="sidenav" id="sidenavigation" ontouchmove="opensidenav()">
+            <div class="sidenav" id="sidenavigation">
                   <div class="boundsidenavheader">
                         <img src="images/times-solid.svg" alt="" id="closesidenavbut" onclick="opensidenav()">
                         <h2>TO DO</h2>
@@ -83,11 +83,11 @@
                               <img src="images/star-regular.svg" alt="">
                               <h4>Important</h4>
                         </a>
-                        <hr style="width: 90%;">
+                        <hr>
                   </div>
                   <div class="addnewtaskgroup" onclick="addnewtaskgroup()">
                         <img src="images/plus-solid-yellow.svg" alt="">
-                        <h3>New List</h3>
+                        <h3>List</h3>
                   </div>
             </div>
             <div class="header">
@@ -192,7 +192,7 @@
             //selectDBRef('Tasks');
             function logout() {
                   firebase.auth().signOut();
-                  window.location = "home.html";
+                  window.location = "index.html";
             }
             //let root = firebase.database().ref();
             //let rootdbref = root.child('Tasks');
@@ -205,6 +205,7 @@
       <script src="js/addtask.js"></script>
       <script src="js/important.js"></script>
       <script src="js/taskmanager.js"></script>
+      <script src="js/dropdown.js"></script>
 </body>
 
 </html>

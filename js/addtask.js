@@ -102,6 +102,28 @@ class Task {
       updateImportance(important) {
             this.important = important;
       }
+
+      updateUI() {
+            let task = document.getElementById(this.id);
+            let tick = task.getElementsByTagName('button')[0];
+            let text = task.getElementsByTagName('p')[0];
+            if(this.completed) {
+                  tick.classList.add('ticked');
+                  text.style.textDecoration = "line-through";
+            }
+            else {
+                  tick.classList.remove('ticked');
+                  text.style.textDecoration = "none";
+            }
+      }
+
+      hidetask() {
+            document.getElementById(this.id+"").style.display = "none";
+      }
+
+      unhidetask() {
+            document.getElementById(this.id+"").style.display = "grid";
+      }
 }
 
 function onImportant(importanticon, important, id) {

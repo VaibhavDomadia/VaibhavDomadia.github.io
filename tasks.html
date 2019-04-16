@@ -78,7 +78,7 @@
 
 <body>
       <div class="grid-layout-page" id="pagelayout">
-            <div class="sidenav" id="sidenavigation" ontouchmove="opensidenav()">
+            <div class="sidenav" id="sidenavigation">
                   <div class="boundsidenavheader">
                         <img src="images/times-solid.svg" alt="" id="closesidenavbut" onclick="opensidenav()">
                         <h2>TO DO</h2>
@@ -92,11 +92,11 @@
                               <img src="images/star-regular.svg" alt="">
                               <h4>Important</h4>
                         </a>
-                        <hr style="width: 90%;">
+                        <div id="division"></div>
                   </div>
                   <div class="addnewtaskgroup" onclick="openlistname()">
                         <img src="images/plus-solid-yellow.svg" alt="">
-                        <h3>New List</h3>
+                        <h3>List</h3>
                   </div>
             </div>
             <div class="header">
@@ -111,7 +111,22 @@
                         </ul>
                   </div>
                   <button class="headerbutton" style="display: none;"><img src="images/th-large-solid.svg" alt=""></button>
-                  <button id="logoutbut" onclick="logout()">Log Out</button>
+                  <div id="header-dropdown">
+                        <img src="images/ellipsis-v-solid.svg" alt="" class="icon" id="head-dropdown-icon" onclick="opendropdownheader()">
+                        <div id="dropdown-content" class="dropdown-content-class">
+                              <div class="dropbut" onclick="operationoncompletedtask()">
+                                    <img src="images/check-circle-regular.svg" alt="" class="icon">
+                                    <p>Hide completed tasks</p>
+                              </div>
+                              <div class="dropbut">
+                                    <p>some more</p>
+                              </div>
+                              <div class="dropbut" onclick="logout()">
+                                    <img src="images/sign-out-alt-solid.svg" alt="" class="icon">
+                                    <p>Log Out</p>
+                              </div>
+                        </div>
+                  </div>
             </div>
             <div class="task-layout">
                   <div class="boundinputfornewtask">
@@ -209,7 +224,7 @@
                   }
                   else {
                         console.log("Not Signed In");
-                        window.location = "home.html";
+                        window.location = "index.html";
                   }
             })
             //let root = firebase.database().ref('users/' + user.uid);
@@ -224,6 +239,7 @@
       <script src="js/addtask.js"></script>
       <script src="js/tasks.js"></script>
       <script src="js/taskmanager.js"></script>
+      <script src="js/dropdown.js"></script>
 </body>
 
 </html>

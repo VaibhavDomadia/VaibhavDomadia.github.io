@@ -112,11 +112,15 @@
                   </div>
                   <button class="headerbutton" style="display: none;"><img src="images/th-large-solid.svg" alt=""></button>
                   <div id="header-dropdown">
-                        <img src="images/ellipsis-v-solid.svg" alt="" class="icon" id="head-dropdown-icon" onclick="opendropdownheader()">
+                        <img src="images/ellipsis-v-solid.svg" alt="" class="icon" id="head-dropdown-icon">
                         <div id="dropdown-content" class="dropdown-content-class">
                               <div class="dropbut" onclick="operationoncompletedtask()">
                                     <img src="images/check-circle-regular.svg" alt="" class="icon">
                                     <p>Hide completed tasks</p>
+                              </div>
+                              <div class="dropbut" onclick="sorttaskbyid()">
+                                    <img src="images/sort-amount-up-solid.svg" alt="" class="icon">
+                                    <p>Sort tasks</p>
                               </div>
                               <div class="dropbut" onclick="logout()">
                                     <img src="images/sign-out-alt-solid.svg" alt="" class="icon">
@@ -124,6 +128,7 @@
                               </div>
                         </div>
                   </div>
+                  <div id="disable"></div>
             </div>
             <div class="task-layout">
                   <div class="boundinputfornewtask">

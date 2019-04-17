@@ -45,6 +45,7 @@ class Task {
             let text = document.createElement("p");
             text.innerHTML = this.value;
             text.classList.add("textfortask");
+            text.setAttribute("onclick",`opentaskmanager(${this.id})`);
 
             if(this.completed) {
                   text.style.textDecoration = "line-through";
@@ -243,3 +244,23 @@ function opencontextmenufortask(event) {
       }
       return false;
 }*/
+
+function sorttaskbyid() {
+      let taskbundleUI = taskContainer.getElementsByTagName("div");
+      console.log(taskbundleUI);
+      console.log(tasklist);
+      for(let i=1 ; i<tasklist.length ; i++) {
+            let temptask = tasklist[i];
+            let temptaskUI = taskbundleUI[i];
+            let j=i-1;
+            while(j>=0 && temptask.id < tasklist[j].id) {
+                  tasklist[j+1] = tasklist[j];
+                  taskbundleUI[j+1] = taskbundleUI[j];
+                  j--;
+            }
+            tasklist[j+1] = temptask;
+            taskbundleUI[j+1] = temptaskUI;
+      }
+      console.log(taskbundleUI);
+      console.log(tasklist);
+}

@@ -7,7 +7,7 @@
       .sidenavopen {
             position: absolute;
             width: 80%;
-            z-index: 5;
+            z-index: 15;
             visibility: visible;
             transition: 0.3s;
       }

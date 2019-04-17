@@ -109,7 +109,7 @@
 
 #head-dropdown-icon-bound {
       display: grid;
-      padding: 12px;
+      padding: 16px;
 }
 
 #head-dropdown-icon {
@@ -133,7 +133,7 @@
       z-index: 10;
       background-color: white;
       width: 240px;
-      right: 0;
+      right: 16px;
       border-radius: 4px;
 }
 

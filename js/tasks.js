@@ -1,5 +1,3 @@
-//let obtainnooftasks = rootdbref.child('nooftasks');
-
 let nooftasks;
 
 let tasklist = [];
@@ -41,6 +39,8 @@ function initTasks() {
             let value = snap.child("value").val();
             let completed = snap.child("completed").val();
             let important = snap.child("important").val();
+            let datesel = snap.child("taskdate").val();
+            console.log(datesel);
             let taskselec;
             if(id != null) {
                   for(let i=0 ; i<tasklist.length ; i++) {
@@ -53,6 +53,7 @@ function initTasks() {
                   taskselec.updateText(value, id);
                   taskselec.updateState(completed);
                   taskselec.updateImportance(important);
+                  taskselec.updateDate(datesel);
             }
       });
 };

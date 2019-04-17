@@ -13,13 +13,12 @@ class Task {
             let task = document.createElement("div");
             task.classList.add("task");
             task.setAttribute("id",this.id);
-            task.setAttribute("oncontextmenu",`return opencontextmenufortask(event);`);
 
             this.createTick(task);
             this.createText(task);
-            this.createEditIcon(task);
-            this.createImportantIcon(task);
-            this.createDeleteIcon(task);
+            //this.createEditIcon(task);
+            //this.createImportantIcon(task);
+            //this.createDeleteIcon(task);
 
             taskContainer.appendChild(task);
       }
@@ -102,6 +101,11 @@ class Task {
 
       updateImportance(important) {
             this.important = important;
+      }
+
+      updateDate(date) {
+            console.log("update date triggered" + date);
+            this.taskdate = date;
       }
 
       updateUI() {
@@ -221,29 +225,6 @@ function removeTask(id) {
       console.log(tasklist);
       console.log(id);
 }
-
-/*window.onclick = function() {
-      let contextmenu = document.getElementById("menutask");
-      contextmenu.style.display = "none";
-}
-
-function opencontextmenufortask(event) {
-      let contextmenu = document.getElementById("menutask");
-      contextmenu.style.display = "block";
-      let x = event.clientX;
-      let y = event.clientY;
-      let heightofscreen = window.innerHeight;
-      let heightofcontextmenu = contextmenu.offsetHeight;
-      contextmenu.style.left = x + "px";
-
-      if(heightofscreen-y < heightofcontextmenu) {
-            contextmenu.style.top = y-heightofcontextmenu + "px";
-      }
-      else {
-            contextmenu.style.top = y + "px";
-      }
-      return false;
-}*/
 
 function sorttaskbyid() {
       let taskbundleUI = taskContainer.getElementsByTagName("div");

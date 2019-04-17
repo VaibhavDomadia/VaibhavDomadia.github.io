@@ -1,10 +1,8 @@
-let taskContainer = document.getElementById("taskcontainer");
-
-//let obtainnooftasks = rootdbref.child('nooftasks');
-
 let nooftasks;
 
 let tasklist = [];
+
+let taskContainer = document.getElementById("taskcontainer");
 
 function getImportantTasks() {
       // Getting No of tasks user currently has in this taskgroup

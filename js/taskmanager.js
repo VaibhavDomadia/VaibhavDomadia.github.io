@@ -83,6 +83,7 @@ function opentaskmanager(id) {
        * This will get the date when the user created the task of the selected task and will assign to a text box.
        */
       let dt = tasksel.taskdate;
+      console.log("inside tm" + dt);
       let s = "Created on " + weekval[dt[3]] + ", " + dt[0] + " " + monthval[dt[1]] + " " + dt[2];
       document.getElementById('taskmanagerdate').innerHTML = s;
 

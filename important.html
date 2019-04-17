@@ -51,29 +51,19 @@
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-database.js"></script>
       <script src="js/database.js"></script>
-      <!-- <script>
-            // Initialize Firebase
-            var config = {
-            apiKey: "AIzaSyAs7J4hlBXsgyfDB--BqVYzHj9fjQYWls8",
-            authDomain: "to-do-dba8b.firebaseapp.com",
-            databaseURL: "https://to-do-dba8b.firebaseio.com",
-            projectId: "to-do-dba8b",
-            storageBucket: "to-do-dba8b.appspot.com",
-            messagingSenderId: "364465222352"
-            };
-            firebase.initializeApp(config);
-      </script> -->
-
-      
 </head>
 
 <body>
       <div class="grid-layout-page" id="pagelayout">
+
+            <!-- Side Navigation Drawer -->
             <div class="sidenav" id="sidenavigation">
+
                   <div class="boundsidenavheader">
                         <img src="images/times-solid.svg" alt="" id="closesidenavbut" onclick="opensidenav()">
                         <h2>TO DO</h2>
                   </div>
+
                   <div class="task-group-container" id="taskgroupcont">
                         <a href="tasks.html">
                               <img src="images/check-solid.svg" alt="">
@@ -83,34 +73,63 @@
                               <img src="images/star-regular.svg" alt="">
                               <h4>Important</h4>
                         </a>
-                        <hr>
+                        <div id="division"></div>
                   </div>
-                  <div class="addnewtaskgroup" onclick="addnewtaskgroup()">
+
+                  <div class="addnewtaskgroup" onclick="openlistname()">
                         <img src="images/plus-solid-yellow.svg" alt="">
                         <h3>List</h3>
                   </div>
+
             </div>
+
+            <!-- Header -->
             <div class="header">
-                  <button id="nav-drawer-button" onclick="opensidenav()"><img src="images/bars-solid-white.svg" alt=""></button>
+
+                  <button id="nav-drawer-button" onclick="opensidenav()">
+                        <img src="images/bars-solid-white.svg" alt="">
+                  </button>
+
                   <h1>Important</h1>
-                  <div class="theme-container" style="display: none;">
-                        <button class="headerbutton" onclick="openmenufortheme()"><img src="images/palette-solid.svg"
-                                    alt=""></button>
-                        <ul class="themes" id="thememenu">
-                              <li>Light Theme</li>
-                              <li>Dark Theme</li>
-                        </ul>
+
+                  <!-- Dropdown for several functionalities -->
+                  <div id="header-dropdown">
+
+                        <div id="head-dropdown-icon-bound">
+                              <img src="images/ellipsis-v-solid.svg" alt="" class="icon" id="head-dropdown-icon">
+                        </div>
+
+                        <div id="dropdown-content" class="dropdown-content-class">
+                              <div class="dropbut" onclick="operationoncompletedtask()">
+                                    <img src="images/check-circle-regular.svg" alt="" class="icon">
+                                    <p>Hide completed tasks</p>
+                              </div>
+                              <div class="dropbut" onclick="sorttaskbyid()">
+                                    <img src="images/sort-amount-up-solid.svg" alt="" class="icon">
+                                    <p>Sort tasks</p>
+                              </div>
+                              <div class="dropbut" onclick="logout()">
+                                    <img src="images/sign-out-alt-solid.svg" alt="" class="icon">
+                                    <p>Log Out</p>
+                              </div>
+                        </div>
+
                   </div>
-                  <button class="headerbutton" style="display: none;"><img src="images/th-large-solid.svg" alt=""></button>
-                  <button id="logoutbut" onclick="logout()">Log Out</button>
+                  <div id="disable"></div>
             </div>
+
+            <!-- Main Layout where tasks are shown -->
             <div class="task-layout">
+
+                  <!-- UI for adding a new task in the container -->
                   <div class="boundinputfornewtask">
                         <div class="input-shadow">
                               <input type="text" id="inputfornewtask" placeholder="Enter Task">
                               <button class="buttonfornewtask" onclick="addTask()" id="butfornewtask">Add</button>
                         </div>
                   </div>
+
+                  <!-- This is the container where tasks are stored -->
                   <div class="task-container" id="taskcontainer">
                         <!-- For understanding dynamic structure made when new task is created -->
                         <!-- <div class="task" id="1" oncontextmenu="opencontextmenufortask(event)">
@@ -122,19 +141,11 @@
                               <img src="images/star-regular-dark.svg" class="importanticon" alt="">
                               <img src="images/trash-solid.svg" class="deleteicon" onclick="removetask(1)" alt="">
                         </div> -->
-                        <ul class="menu-task" id="menutask">
-                              <li>Hello</li>
-                              <li><img src="images/star-regular-white.svg" alt="" class="icon-specific">
-                                    <p>Mark as Important</p>
-                              </li>
-                              <hr>
-                              <li onclick="removetask()"><img src="images/trash-solid-white.svg" alt=""
-                                          class="icon-specific">
-                                    <p>Delete Task</p>
-                              </li>
-                        </ul>
                   </div>
+
             </div>
+
+            <!-- This is UI for adding a new task group in sidenav -->
             <div id="listnamebound">
                   <div class="blur"></div>
                   <div class="listname">
@@ -147,10 +158,19 @@
                         </div>
                   </div>
             </div>
+
+            <!-- This is to make whole screen opaque -->
             <div id="opaque"></div>
+
       </div>
 
+      <!-- This is UI for task manager which handles several functionalities related to a specific task -->
       <div class="task-manager" id="taskmanager">
+
+            <button onclick="closetaskmanager()" id="closetaskmanagerbutton">
+                  <img src="images/arrow-right-solid.svg" alt="Close">
+            </button>
+
             <div class="task-display">
                   <button class="tick-manager" id="tickmanager" onclick="ontickinsidemanager()">
                         <img src="images/check-solid-white.svg" alt="">
@@ -158,12 +178,23 @@
                   <!-- <input type="text" id="task-text"> -->
                   <textarea name="" cols="30" rows="2" id="task-text"></textarea>
             </div>
-            <button>Mark as Important</button>
-            <button>Delete Task</button>
-            <button onclick="closetaskmanager()" id="closetaskmanagerbutton"><img src="images/arrow-right-solid.svg"
-                        alt="Close"></button>
+
+            <div class="taskmanagerbut" onclick="onimportantinsidemanager()">
+                  <img src="images/star-regular-dark.svg" alt="" id="impimage">
+                  <p>Mark as Important</p>
+            </div>
+
+            <div class="taskmanagerbut" onclick="ondeleteinsidemanager()">
+                  <img src="images/trash-solid.svg" alt="">
+                  <p>Delete Task</p>
+            </div>
+
+            <div id="taskmanagerdatebound">
+                  <p id="taskmanagerdate">Created on </p>
+            </div>
       </div>
 
+      <!-- JavaScript files -->
       <script src="js/header.js"></script>
       <script src="js/sidenav.js"></script>
       <script src="js/taskgroupcontainer.js"></script>
@@ -186,26 +217,18 @@
                         window.location = "index.html";
                   }
             })
-            //let root = firebase.database().ref('users/' + user.uid);
-            //let rootdbref = root.child('Tasks')
-            //let obtainnooftasks = rootdbref.child('nooftasks');
-            //selectDBRef('Tasks');
+
+            // For Logout
             function logout() {
                   firebase.auth().signOut();
                   window.location = "index.html";
             }
-            //let root = firebase.database().ref();
-            //let rootdbref = root.child('Tasks');
-            /*function selectDBRef(value) {
-                  rootdbref = root.child(value);
-                  console.log(value);
-            }
-            selectDBRef('Important');*/
       </script>
       <script src="js/addtask.js"></script>
       <script src="js/important.js"></script>
       <script src="js/taskmanager.js"></script>
       <script src="js/dropdown.js"></script>
+
 </body>
 
 </html>

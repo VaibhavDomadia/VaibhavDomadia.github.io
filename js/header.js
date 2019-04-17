@@ -17,7 +17,7 @@ function opendropdownheader() {
 }
 
 window.onclick = function(event) {
-      if(event.target.matches('#head-dropdown-icon')) {
+      if(event.target.matches('#head-dropdown-icon-bound')) {
             stateofdropdown = !stateofdropdown;
             opendropdownheader();
       }

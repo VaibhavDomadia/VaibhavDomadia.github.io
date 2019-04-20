@@ -47,9 +47,6 @@
       <link rel="stylesheet" href="css/listnamemq.css">
 
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-database.js"></script>
       <script src="js/database.js"></script>
 </head>
 
@@ -167,28 +164,30 @@
       <!-- This is UI for task manager which handles several functionalities related to a specific task -->
       <div class="task-manager" id="taskmanager">
 
-            <button onclick="closetaskmanager()" id="closetaskmanagerbutton">
-                  <img src="images/arrow-right-solid.svg" alt="Close">
-            </button>
-
-            <div class="task-display">
-                  <button class="tick-manager" id="tickmanager" onclick="ontickinsidemanager()">
-                        <img src="images/check-solid-white.svg" alt="">
+            <div class="bound-top-manager">
+                  <button onclick="closetaskmanager()" id="closetaskmanagerbutton">
+                        <img src="images/arrow-right-solid.svg" alt="Close">
                   </button>
-                  <!-- <input type="text" id="task-text"> -->
-                  <textarea name="" cols="30" rows="2" id="task-text"></textarea>
+                  
+                  <div class="task-display">
+                        <button class="tick-manager" id="tickmanager" onclick="ontickinsidemanager()">
+                              <img src="images/check-solid-white.svg" alt="">
+                        </button>
+                        <!-- <input type="text" id="task-text"> -->
+                        <textarea name="" cols="30" rows="2" id="task-text"></textarea>
+                  </div>
             </div>
-
+            
             <div class="taskmanagerbut" onclick="onimportantinsidemanager()">
                   <img src="images/star-regular-dark.svg" alt="" id="impimage">
                   <p>Mark as Important</p>
             </div>
-
+            
             <div class="taskmanagerbut" onclick="ondeleteinsidemanager()">
                   <img src="images/trash-solid.svg" alt="">
                   <p>Delete Task</p>
             </div>
-
+            
             <div id="taskmanagerdatebound">
                   <p id="taskmanagerdate">Created on </p>
             </div>
@@ -228,7 +227,7 @@
       <script src="js/tasks.js"></script>
       <script src="js/taskmanager.js"></script>
       <script src="js/dropdown.js"></script>
-
+      
 </body>
 
 </html>

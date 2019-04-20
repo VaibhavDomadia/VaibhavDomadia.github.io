@@ -34,7 +34,7 @@
 .sidenav h2 {
       font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
       font-weight: normal;
-      color: #fbbc05;
+      color: var(--theme-color);
       justify-self: baseline;
 }
 
@@ -58,7 +58,7 @@
 
 .task-group-active {
       background-color: #f4f4f4;
-      border-left: 4px solid #fbbc05;
+      border-left: 4px solid var(--theme-color);
 }
 
 .task-group-container > a:hover {
@@ -94,7 +94,7 @@
 
 .addnewtaskgroup > h3 {
       align-self: center;
-      color: #fbbc05;
+      color: var(--theme-color);
       line-height: 0px;
       font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
       font-weight: normal;
@@ -106,5 +106,5 @@
       align-self: center;
       width: 24px;
       height: 24px;
-      color: #fbbc05;
+      color: var(--theme-color);
 }

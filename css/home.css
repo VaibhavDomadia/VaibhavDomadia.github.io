@@ -16,7 +16,6 @@ body , html {
 
 .grid-head {
       display: grid;
-      /* margin: 150px 0px; */
       grid-template-columns: 1fr;
       height: 50%;
       justify-items: center;

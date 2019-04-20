@@ -27,10 +27,9 @@ let weekval = ["Sun" , "Mon" , "Tue" , "Wed" , "Thur" , "Fri" , "Sat"];
  */
 function opentaskmanager(id) {
 
-
+      
       // This will open task manager as per the device size.
       let taskmanager = document.getElementById("taskmanager");
-      taskmanager.style.padding = "24px";
       if(windowsize.matches) {
             taskmanager.style.width = "100%";
       }
@@ -51,10 +50,10 @@ function opentaskmanager(id) {
       console.log(tasksel);
       console.log(tasksel.value + " " + tasksel.completed);
 
-
-
+      
+       
       /**
-       * If the task is already completed then the css class (clicked) should be added to tick box element inside
+       * If the task is already completed then the css class (clicked) should be added to tick box element inside 
        * the task manager.
        */
       let tick = document.getElementById("tickmanager");

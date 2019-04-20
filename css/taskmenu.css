@@ -4,7 +4,6 @@
       padding: 8px;
       margin: 0px;
       border-radius: 8px;
-      /* width: 250px; */
       position: absolute;
       display: none;
 }
@@ -30,7 +29,7 @@
 }
 
 .menu-task >li:hover {
-      background-color: #fbbc05;
+      background-color: var(--theme-color);
       color: rgba(0,0,0,0.6);
 }
 

@@ -87,24 +87,8 @@
 }
 
 .themes > li:hover {
-      background-color: #fbbc05;
+      background-color: var(--theme-color);
       color: rgba(0,0,0,0.6);
-}
-
-/* #logoutbut {
-      padding: 0px;
-      margin: 12px;
-      background-color: white;
-      border: none;
-      border: 2px solid #fbbc05;
-      border-radius: 4px;
-      color: #444444;
-      box-shadow: 0px 0px 8px #888888;
-      outline: none;
-} */
-
-#logoutbut:hover {
-      box-shadow: 0px 0px 4px #888888;
 }
 
 #head-dropdown-icon-bound {

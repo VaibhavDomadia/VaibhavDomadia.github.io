@@ -1,4 +1,4 @@
-(function() {
+(function () {
       // Initialize Firebase
       const config = {
             apiKey: "AIzaSyAs7J4hlBXsgyfDB--BqVYzHj9fjQYWls8",
@@ -11,27 +11,14 @@
       firebase.initializeApp(config);
 
 
-
-
-
-      
-
       // FirebaseUI config.
       var uiConfig = {
-        signInSuccessUrl: 'tasks.html',
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        ],
-        // tosUrl and privacyPolicyUrl accept either url string or a callback
-        // function.
-        // Terms of service url/callback.
-        tosUrl: '<your-tos-url>',
-        // Privacy policy url/callback.
-        privacyPolicyUrl: function() {
-          window.location.assign('<your-privacy-policy-url>');
-        }
+            signInSuccessUrl: 'tasks.html',
+            signInOptions: [
+                  // Leave the lines as is for the providers you want to offer your users.
+                  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                  firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            ],
       };
 
       // Initialize the FirebaseUI Widget using Firebase.
@@ -40,41 +27,9 @@
       ui.start('#firebaseui-auth-container', uiConfig);
 
 
-
-
-      /*const EmailInput = document.getElementById('email');
-      const PasswordInput = document.getElementById('password');
-      const LogInButton = document.getElementById('login');
-      const SignUpButton = document.getElementById('signup');
-      const LogOutButton = document.getElementById('logout');
-
-      // Login Event
-      LogInButton.addEventListener('click', e => {
-            //Get Email and Password Values;
-            const email = EmailInput.value;
-            const password = PasswordInput.value;
-            const auth = firebase.auth();
-
-            //Sign In
-            const promise = auth.signInWithEmailAndPassword(email, password);
-            promise.catch(e => console.log(e.message));
-      })
-
-      //SignUp Event
-      SignUpButton.addEventListener('click', e => {
-            //Get Email and Password Values;
-            const email = EmailInput.value;
-            const password = PasswordInput.value;
-            const auth = firebase.auth();
-
-            //Sign In
-            const promise = auth.createUserWithEmailAndPassword(email, password);
-            promise.catch(e => console.log(e.message));
-      })*/
-
       // Realtime Listener for Authentication
       firebase.auth().onAuthStateChanged(User => {
-            if(User) {
+            if (User) {
                   console.log(User);
                   window.location = "tasks.html"
             }

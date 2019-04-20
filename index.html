@@ -7,6 +7,34 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>To-Do</title>
 
+      <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+      <script>
+            (function () {
+                  // Initialize Firebase
+                  const config = {
+                        apiKey: "AIzaSyAs7J4hlBXsgyfDB--BqVYzHj9fjQYWls8",
+                        authDomain: "to-do-dba8b.firebaseapp.com",
+                        databaseURL: "https://to-do-dba8b.firebaseio.com",
+                        projectId: "to-do-dba8b",
+                        storageBucket: "to-do-dba8b.appspot.com",
+                        messagingSenderId: "364465222352"
+                  };
+                  firebase.initializeApp(config);
+
+                  // Realtime Listener for Authentication
+                  firebase.auth().onAuthStateChanged(User => {
+                        if (User) {
+                              console.log(User);
+                              window.location = "tasks.html"
+                        }
+                        else {
+                              console.log("Not Signed In");
+                        }
+                  })
+            }());
+      </script>
+
+
       <style>
             .banner {
                   align-content: center;

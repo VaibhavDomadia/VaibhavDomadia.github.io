@@ -15,7 +15,7 @@ let disable = document.getElementById('disable');
  * This function is used to toggle between opening and closing of dropdown.
  * When the user opens the dropdown, this function will add class show (css class) to dropdown-content which will show the dropdown.
  * And on closing the dropdown it will remove the show class (css class) to make it's display none;
- *
+ * 
  * This function will also change the property of disable(global - variable) (already mentioned above) to disable activities on screen.
  */
 function opendropdownheader() {

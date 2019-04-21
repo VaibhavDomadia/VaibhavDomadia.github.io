@@ -125,7 +125,7 @@
                   <div class="boundinputfornewtask">
                         <div class="input-shadow">
                               <input type="text" id="inputfornewtask" placeholder="Enter Task">
-                              <button class="buttonfornewtask" onclick="addTask()" id="butfornewtask">Add</button>
+                              <button class="buttonfornewtask" onclick="addTask()" id="butfornewtask">+</button>
                         </div>
                   </div>
 
@@ -166,11 +166,11 @@
 
       <!-- This is UI for task manager which handles several functionalities related to a specific task -->
       <div class="task-manager" id="taskmanager">
-      
+
             <button onclick="closetaskmanager()" id="closetaskmanagerbutton">
                   <img src="images/arrow-right-solid.svg" alt="Close">
             </button>
-            
+
             <div class="task-display">
                   <button class="tick-manager" id="tickmanager" onclick="ontickinsidemanager()">
                         <img src="images/check-solid-white.svg" alt="">
@@ -178,17 +178,17 @@
                   <!-- <input type="text" id="task-text"> -->
                   <textarea name="" cols="30" rows="2" id="task-text"></textarea>
             </div>
-            
+
             <div class="taskmanagerbut" onclick="onimportantinsidemanager()">
                   <img src="images/star-regular-dark.svg" alt="" id="impimage">
                   <p>Mark as Important</p>
             </div>
-            
+
             <div class="taskmanagerbut" onclick="ondeleteinsidemanager()">
                   <img src="images/trash-solid.svg" alt="">
                   <p>Delete Task</p>
             </div>
-            
+
             <div id="taskmanagerdatebound">
                   <p id="taskmanagerdate">Created on </p>
             </div>
@@ -228,7 +228,7 @@
       <script src="js/important.js"></script>
       <script src="js/taskmanager.js"></script>
       <script src="js/dropdown.js"></script>
-      
+
 </body>
 
 </html>

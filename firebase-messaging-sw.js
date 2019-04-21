@@ -1,6 +1,5 @@
 // Get Instance ID token. Initially this makes a network call, once retrieved
 // subsequent calls to getToken will return from cache.
-const messaging = firebase.messaging();
 messaging.getToken().then(function (currentToken) {
       if (currentToken) {
             sendTokenToServer(currentToken);

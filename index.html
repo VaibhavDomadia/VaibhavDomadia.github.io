@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -85,7 +85,7 @@
       </script>
 
       <script>
-            var messaging = firebase.messaging();
+            const messaging = firebase.messaging();
             messaging.usePublicVapidKey("BBUYBs9u2AawQCS-gmhCAmk4sQSZwM4iuzvAo9dYSZo4jXZHagEtV9jEUTeEBMuFzhxhMiuEu_SF_9IoJskP_mc");
             messaging.requestPermission().then(function () {
                   console.log('Notification permission granted.');

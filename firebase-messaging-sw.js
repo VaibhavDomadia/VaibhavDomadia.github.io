@@ -18,7 +18,7 @@ messaging.getToken().then(function (currentToken) {
       }
 }).catch(function (err) {
       console.log('An error occurred while retrieving token. ', err);
-      showToken('Error retrieving Instance ID token. ', err);
+      // showToken('Error retrieving Instance ID token. ', err);
       setTokenSentToServer(false);
 });
 

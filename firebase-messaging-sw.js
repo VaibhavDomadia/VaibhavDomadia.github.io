@@ -1,7 +1,7 @@
-// if ('function' === typeof importScripts) {
-//       importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js");
-//       importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js");
-// }
+if ('function' === typeof importScripts) {
+      importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js");
+      importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js");
+}
 
 // Get Instance ID token. Initially this makes a network call, once retrieved
 // subsequent calls to getToken will return from cache.

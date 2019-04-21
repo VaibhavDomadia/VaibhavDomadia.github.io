@@ -9,29 +9,14 @@
             messagingSenderId: "364465222352"
       };
       firebase.initializeApp(config);
+
+      var messaging = firebase.messaging();
+      messaging.usePublicVapidKey("BBUYBs9u2AawQCS-gmhCAmk4sQSZwM4iuzvAo9dYSZo4jXZHagEtV9jEUTeEBMuFzhxhMiuEu_SF_9IoJskP_mc");
+      messaging.requestPermission().then(function () {
+            console.log('Notification permission granted.');
+            // TODO(developer): Retrieve an Instance ID token for use with FCM.
+            // ...
+      }).catch(function (err) {
+            console.log('Unable to get permission to notify.', err);
+      });
 }());
-
-const messaging = firebase.messaging();
-messaging.usePublicVapidKey("BBUYBs9u2AawQCS-gmhCAmk4sQSZwM4iuzvAo9dYSZo4jXZHagEtV9jEUTeEBMuFzhxhMiuEu_SF_9IoJskP_mc");
-messaging.requestPermission().then(function () {
-      console.log('Notification permission granted.');
-      // TODO(developer): Retrieve an Instance ID token for use with FCM.
-      // ...
-}).catch(function (err) {
-      console.log('Unable to get permission to notify.', err);
-});
-
-
-
-
-// messaging.requestPermission()
-// .then(function() {
-//       console.log("Got a permission");
-//       return messaging.getToken();
-// })
-// .then(function(token) {
-//       console.log(token);
-// })
-// .catch(function(err) {
-//       console.log("Sorry");
-// })

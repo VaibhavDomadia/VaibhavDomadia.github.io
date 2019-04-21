@@ -1,7 +1,7 @@
-if ('function' === typeof importScripts) {
-      importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js");
-      importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js");
-}
+// if ('function' === typeof importScripts) {
+//       importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js");
+//       importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js");
+// }
 
 const config = {
       apiKey: "AIzaSyAs7J4hlBXsgyfDB--BqVYzHj9fjQYWls8",

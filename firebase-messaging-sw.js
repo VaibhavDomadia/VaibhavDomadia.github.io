@@ -1,7 +1,5 @@
-if ('function' === typeof importScripts) {
-      importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js");
-      importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js");
-}
+importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/5.9.2/firebase-messaging.js");
 
 const config = {
       apiKey: "AIzaSyAs7J4hlBXsgyfDB--BqVYzHj9fjQYWls8",
@@ -17,7 +15,7 @@ const messaging = firebase.messaging();
 
 // Get Instance ID token. Initially this makes a network call, once retrieved
 // subsequent calls to getToken will return from cache.
-messaging.getToken().then(function (currentToken) {
+/*messaging.getToken().then(function (currentToken) {
       if (currentToken) {
             sendTokenToServer(currentToken);
             updateUIForPushEnabled(currentToken);
@@ -51,4 +49,4 @@ messaging.onTokenRefresh(function () {
             console.log('Unable to retrieve refreshed token ', err);
             showToken('Unable to retrieve refreshed token ', err);
       });
-});
+});*/

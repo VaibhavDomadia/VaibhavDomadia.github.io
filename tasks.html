@@ -183,13 +183,26 @@
                   <p>Mark as Important</p>
             </div>
 
-            <div class="taskmanagerbut" onclick="ondeleteinsidemanager()">
+            <div class="taskmanagerbut" onclick="opendeletebox()">
                   <img src="images/trash-solid.svg" alt="">
                   <p>Delete Task</p>
             </div>
 
             <div id="taskmanagerdatebound">
                   <p id="taskmanagerdate">Created on </p>
+            </div>
+
+      </div>
+
+      <div id="confirmdeletebox">
+            <div class="blurdeletebox"></div>
+            <div class="deletebox">
+                  <h3>Are you sure?</h3>
+                  <p>This task will be permanently deleted</p>
+                  <div class="boundbuttondeletebox">
+                        <button onclick="closedeletebox()">Cancel</button>
+                        <button onclick="deletetaskfrombox()">Delete</button>
+                  </div>
             </div>
       </div>
 
@@ -203,7 +216,7 @@
             let rootdbref;
             let obtainnooftasks;
             firebase.auth().onAuthStateChanged(User => {
-                  if(User) {
+                  if (User) {
                         console.log(User.uid);
                         user = firebase.auth().currentUser;
                         root = firebase.database().ref('users/' + user.uid);

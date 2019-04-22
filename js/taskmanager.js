@@ -154,3 +154,20 @@ function ondeleteinsidemanager() {
       closetaskmanager();
       removeTask(currentid);
 }
+
+
+
+function opendeletebox() {
+      let confirmdeletebox = document.getElementById("confirmdeletebox");
+      confirmdeletebox.style.display = "grid";
+}
+
+function deletetaskfrombox() {
+      closedeletebox();
+      ondeleteinsidemanager();
+}
+
+function closedeletebox() {
+      let confirmdeletebox = document.getElementById("confirmdeletebox");
+      confirmdeletebox.style.display = "none";
+}

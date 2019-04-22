@@ -13,6 +13,14 @@ firebase.initializeApp(config);
 
 const messaging = firebase.messaging();
 
+messaging.setBackgroundMessageHandler(function(payload) {
+      const title = "Hello World";
+      const options = {
+            body: payload.data.status
+      }
+      return self.registeration.showNotification(title, options);
+})
+
 // Get Instance ID token. Initially this makes a network call, once retrieved
 // subsequent calls to getToken will return from cache.
 /*messaging.getToken().then(function (currentToken) {

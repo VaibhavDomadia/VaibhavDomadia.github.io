@@ -78,36 +78,9 @@
                               .catch(err => {
                                     console.log('😥 Service worker registration failed: ', err);
                               });
-                        navigator.serviceWorker.register('firebase-messaging-sw.js')
-                              .then(reg => {
-                                    console.log('Service worker registered! 😎', reg);
-                              })
-                              .catch(err => {
-                                    console.log('😥 Service worker registration failed: ', err);
-                              });
                   });
             }
       </script>
-
-      <script>
-            const messaging = firebase.messaging();
-            // messaging.usePublicVapidKey("BBUYBs9u2AawQCS-gmhCAmk4sQSZwM4iuzvAo9dYSZo4jXZHagEtV9jEUTeEBMuFzhxhMiuEu_SF_9IoJskP_mc");
-            messaging.requestPermission().then(function () {
-                  console.log('Notification permission granted.');
-                  // TODO(developer): Retrieve an Instance ID token for use with FCM.
-                  // ...
-                  return messaging.getToken();
-            })
-            .then(function(token) {
-                  console.log(token)
-            })
-            .catch(function (err) {
-                  console.log('Unable to get permission to notify.', err);
-            });
-      </script>
-
-      <!-- <script src="firebase-messaging-sw.js"></script> -->
-
 
       <div class="grid-home">
             <div class="grid-head">

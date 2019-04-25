@@ -47,7 +47,18 @@
       <link rel="stylesheet" href="css/listnamemq.css">
 
       <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-      <script src="js/database.js"></script>
+      <script>
+            var config = {
+                  apiKey: "AIzaSyAs7J4hlBXsgyfDB--BqVYzHj9fjQYWls8",
+                  authDomain: "to-do-dba8b.firebaseapp.com",
+                  databaseURL: "https://to-do-dba8b.firebaseio.com",
+                  projectId: "to-do-dba8b",
+                  storageBucket: "to-do-dba8b.appspot.com",
+                  messagingSenderId: "364465222352"
+            };
+            firebase.initializeApp(config);
+      </script>
+      <!-- <script src="js/database.js"></script> -->
 </head>
 
 <body>
@@ -207,6 +218,35 @@
       </div>
 
       <!-- JavaScript files -->
+      <script>
+            if ('serviceWorker' in navigator) {
+                  window.addEventListener('load', function () {
+                        navigator.serviceWorker.register('firebase-messaging-sw.js')
+                              .then(reg => {
+                                    console.log('Service worker registered! 😎', reg);
+                              })
+                              .catch(err => {
+                                    console.log('😥 Service worker registration failed: ', err);
+                              });
+                  });
+            }
+      </script>
+
+      <script>
+            const messaging = firebase.messaging();
+            messaging.requestPermission().then(function () {
+                  console.log('Notification permission granted.');
+                  return messaging.getToken();
+            })
+                  .then(function (token) {
+                        console.log(token)
+                  })
+                  .catch(function (err) {
+                        console.log('Unable to get permission to notify.', err);
+                  });
+      </script>
+
+
       <script src="js/header.js"></script>
       <script src="js/sidenav.js"></script>
       <script src="js/taskgroupcontainer.js"></script>

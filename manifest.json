@@ -1,0 +1,32 @@
+{
+      "name": "To Do",
+      "short_name": "To Do",
+      "lang": "en-US",
+      "start_url": "/index.html",
+      "display": "standalone",
+      "theme_color": "#FBBC05",
+      "background_color": "#FFFFFF",
+      "gcm_sender_id": "103953800507",
+      "icons": [
+            {
+                  "src": "images/todoy.png",
+                  "sizes": "128x128"
+            },
+            {
+                  "src": "images/todoy.png",
+                  "sizes": "192x192"
+            },
+            {
+                  "src": "images/todoy.png",
+                  "sizes": "256x256"
+            },
+            {
+                  "src": "images/todoy.png",
+                  "sizes": "384x384"
+            },
+            {
+                  "src": "images/todoy.png",
+                  "sizes": "512x512"
+            }
+      ]
+}

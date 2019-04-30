@@ -1,0 +1,40 @@
+* {
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+}
+
+:root {
+      --theme-color: #fbbc05;
+}
+
+body {
+      padding: 0px;
+      margin: 0px;
+      font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.grid-layout-page {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      height: 100vh;
+      width: 100vw;
+      top: 0%;
+      left: 0%;
+}
+
+.sidenav {
+      grid-row: 1/3;
+}
+
+#opaque {
+      top: 0%;
+      left: 0%;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 7;
+      display: none;
+}

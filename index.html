@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>To-Do</title>
+
+      <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+      <script>
+            // Initialize Firebase
+            const config = {
+                  apiKey: "AIzaSyAs7J4hlBXsgyfDB--BqVYzHj9fjQYWls8",
+                  authDomain: "to-do-dba8b.firebaseapp.com",
+                  databaseURL: "https://to-do-dba8b.firebaseio.com",
+                  projectId: "to-do-dba8b",
+                  storageBucket: "to-do-dba8b.appspot.com",
+                  messagingSenderId: "364465222352"
+            };
+            firebase.initializeApp(config);
+
+            // Realtime Listener for Authentication
+            firebase.auth().onAuthStateChanged(User => {
+                  if (User) {
+                        console.log(User);
+                        window.location = "tasks.html"
+                  }
+                  else {
+                        console.log("Not Signed In");
+                  }
+            })
+      </script>
+
+
+      <style>
+            .banner {
+                  align-content: center;
+                  display: none;
+                  justify-content: center;
+                  width: 100%;
+            }
+      </style>
+
+      <link rel="stylesheet" href="css/home.css">
+
+      <link rel="manifest" href="manifest.json">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="application-name" content="To Do">
+      <meta name="apple-mobile-web-app-title" content="To Do">
+      <meta name="theme-color" content="#FBBC05">
+      <meta name="msapplication-navbutton-color" content="#FBBC05">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <meta name="msapplication-starturl" content="/index.html">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link rel="icon" sizes="128x128" href="/images/todoy.png">
+      <link rel="apple-touch-icon" sizes="128x128" href="/images/todoy.png">
+      <link rel="icon" sizes="192x192" href="/images/todoy.png">
+      <link rel="apple-touch-icon" sizes="192x192" href="/images/todoy.png">
+      <link rel="icon" sizes="256x256" href="/images/todoy.png">
+      <link rel="apple-touch-icon" sizes="256x256" href="/images/todoy.png">
+      <link rel="icon" sizes="384x384" href="/images/todoy.png">
+      <link rel="apple-touch-icon" sizes="384x384" href="/images/todoy.png">
+      <link rel="icon" sizes="512x512" href="/images/todoy.png">
+      <link rel="apple-touch-icon" sizes="512x512" href="/images/todoy.png">
+</head>
+
+<body>
+      <script>
+            if ('serviceWorker' in navigator) {
+                  window.addEventListener('load', function () {
+                        navigator.serviceWorker.register('service-worker.js')
+                              .then(reg => {
+                                    console.log('Service worker registered! 😎', reg);
+                              })
+                              .catch(err => {
+                                    console.log('😥 Service worker registration failed: ', err);
+                              });
+                  });
+            }
+      </script>
+
+      <div class="grid-home">
+            <div class="grid-head">
+                  <img src="images/check-solid-yellow.svg" alt="" id="todoicon">
+                  <h1 id="heading">To Do List</h1>
+                  <button id="signin" onclick="window.location = 'login.html'">Sign In</button>
+            </div>
+            <div class="grid-image"><img src="images/home-todo-image.png" alt="" id="todopage"></div>
+      </div>
+      <section id="installBanner" class="banner">
+            <button id="installBtn">Install app</button>
+      </section>
+
+      <script>
+            let deferredPrompt;
+            window.addEventListener('beforeinstallprompt', event => {
+
+                  // Prevent Chrome 67 and earlier from automatically showing the prompt
+                  event.preventDefault();
+
+                  // Stash the event so it can be triggered later.
+                  deferredPrompt = event;
+
+                  // Attach the install prompt to a user gesture
+                  document.querySelector('#installBtn').addEventListener('click', event => {
+
+                        // Show the prompt
+                        deferredPrompt.prompt();
+
+                        // Wait for the user to respond to the prompt
+                        deferredPrompt.userChoice
+                              .then((choiceResult) => {
+                                    if (choiceResult.outcome === 'accepted') {
+                                          console.log('User accepted the A2HS prompt');
+                                    } else {
+                                          console.log('User dismissed the A2HS prompt');
+                                    }
+                                    deferredPrompt = null;
+                              });
+                  });
+
+                  // Update UI notify the user they can add to home screen
+                  document.querySelector('#installBanner').style.display = 'flex';
+            });
+      </script>
+</body>
+
+</html>

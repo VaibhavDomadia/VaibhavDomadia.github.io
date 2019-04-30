@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>To-Do</title>
+
+      <!-- CSS link for page layout -->
+      <link rel="stylesheet" href="css/page.css">
+
+      <!-- CSS link for header -->
+      <link rel="stylesheet" href="css/header.css">
+
+      <!-- CSS link for Side navigation -->
+      <link rel="stylesheet" href="css/sidenav.css">
+
+      <!-- CSS link for task Layout -->
+      <link rel="stylesheet" href="css/taskcontainer.css">
+
+      <!-- CSS link for task manager -->
+      <link rel="stylesheet" href="css/taskmanager.css">
+
+      <!-- CSS link for task manager media query -->
+      <link rel="stylesheet" href="css/taskmanagermq.css">
+
+      <!-- CSS link for task menu -->
+      <link rel="stylesheet" href="css/taskmenu.css">
+
+      <!-- CSS link for media query header -->
+      <link rel="stylesheet" href="css/headermq.css">
+
+      <!-- CSS link for media query Sidenav -->
+      <link rel="stylesheet" href="css/sidenavmq.css">
+
+      <!-- CSS link for media query task Layout -->
+      <link rel="stylesheet" href="css/taskcontainermq.css">
+
+      <!-- CSS for scrollbar -->
+      <link rel="stylesheet" href="css/scroll.css">
+
+      <!-- CSS for Naming new Task List -->
+      <link rel="stylesheet" href="css/listname.css">
+
+      <!-- CSS for Naming new Task List media query -->
+      <link rel="stylesheet" href="css/listnamemq.css">
+
+      <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+      <script>
+            var config = {
+                  apiKey: "AIzaSyAs7J4hlBXsgyfDB--BqVYzHj9fjQYWls8",
+                  authDomain: "to-do-dba8b.firebaseapp.com",
+                  databaseURL: "https://to-do-dba8b.firebaseio.com",
+                  projectId: "to-do-dba8b",
+                  storageBucket: "to-do-dba8b.appspot.com",
+                  messagingSenderId: "364465222352"
+            };
+            firebase.initializeApp(config);
+      </script>
+</head>
+
+<body>
+      <div class="grid-layout-page" id="pagelayout">
+
+            <!-- Side Navigation Drawer -->
+            <div class="sidenav" id="sidenavigation">
+
+                  <div class="boundsidenavheader">
+                        <img src="images/times-solid.svg" alt="" id="closesidenavbut" onclick="opensidenav()">
+                        <h2>TO DO</h2>
+                  </div>
+
+                  <div class="task-group-container" id="taskgroupcont">
+                        <a href="tasks.html" class="task-group-active" onclick="selectDBRef('Tasks')">
+                              <img src="images/check-solid.svg" alt="">
+                              <h4>Tasks</h4>
+                        </a>
+                        <a href="important.html">
+                              <img src="images/star-regular.svg" alt="">
+                              <h4>Important</h4>
+                        </a>
+                        <div id="division"></div>
+                  </div>
+
+                  <div class="addnewtaskgroup" onclick="openlistname()">
+                        <img src="images/plus-solid-yellow.svg" alt="">
+                        <h3>List</h3>
+                  </div>
+
+            </div>
+
+            <!-- Header -->
+            <div class="header">
+
+                  <button id="nav-drawer-button" onclick="opensidenav()">
+                        <img src="images/bars-solid-white.svg" alt="">
+                  </button>
+
+                  <h1>Tasks</h1>
+
+                  <!-- Dropdown for several functionalities -->
+                  <div id="header-dropdown">
+
+                        <div id="head-dropdown-icon-bound">
+                              <img src="images/ellipsis-v-solid.svg" alt="" class="icon" id="head-dropdown-icon">
+                        </div>
+
+                        <div id="dropdown-content" class="dropdown-content-class">
+                              <div class="dropbut" onclick="operationoncompletedtask()">
+                                    <img src="images/check-circle-regular.svg" alt="" class="icon">
+                                    <p>Hide completed tasks</p>
+                              </div>
+                              <div class="dropbut" onclick="sorttaskbyid()">
+                                    <img src="images/sort-amount-up-solid.svg" alt="" class="icon">
+                                    <p>Sort tasks</p>
+                              </div>
+                              <div class="dropbut" onclick="logout()">
+                                    <img src="images/sign-out-alt-solid.svg" alt="" class="icon">
+                                    <p>Log Out</p>
+                              </div>
+                        </div>
+
+                  </div>
+                  <div id="disable"></div>
+            </div>
+
+            <!-- Main Layout where tasks are shown -->
+            <div class="task-layout">
+
+                  <!-- UI for adding a new task in the container -->
+                  <div class="boundinputfornewtask">
+                        <div class="input-shadow">
+                              <input type="text" id="inputfornewtask" placeholder="Enter Task">
+                              <button class="buttonfornewtask" onclick="addTask()" id="butfornewtask">+</button>
+                        </div>
+                  </div>
+
+                  <!-- This is the container where tasks are stored -->
+                  <div class="task-container" id="taskcontainer">
+                        <!-- For understanding dynamic structure made when new task is created -->
+                        <!-- <div class="task" id="1" oncontextmenu="opencontextmenufortask(event)">
+                              <button onclick="ontick(1)" class="tick">
+                                    <img src="images/check-solid.svg" alt="">
+                              </button>
+                              <p class="textfortask"></p>
+                              <img src="images/pen-solid.svg" class="editicon" onclick="opentaskmanager(1)" alt="">
+                              <img src="images/star-regular-dark.svg" class="importanticon" alt="">
+                              <img src="images/trash-solid.svg" class="deleteicon" onclick="removetask(1)" alt="">
+                        </div> -->
+                  </div>
+
+            </div>
+
+            <!-- This is UI for adding a new task group in sidenav -->
+            <div id="listnamebound">
+                  <div class="blur"></div>
+                  <div class="listname">
+                        <h3>List Name</h3>
+                        <img src="images/tasks-solid.svg" alt="">
+                        <input type="text" placeholder="Enter List Name" id="inputfortaskgroup">
+                        <div class="boundbutton">
+                              <button onclick="closelistname()">Cancel</button>
+                              <button onclick="addnewtasklist()">Save</button>
+                        </div>
+                  </div>
+            </div>
+
+            <!-- This is to make whole screen opaque -->
+            <div id="opaque"></div>
+
+      </div>
+
+      <!-- This is UI for task manager which handles several functionalities related to a specific task -->
+      <div class="task-manager" id="taskmanager">
+
+            <div class="bound-top-manager">
+                  <button onclick="closetaskmanager()" id="closetaskmanagerbutton">
+                        <img src="images/arrow-right-solid.svg" alt="Close">
+                  </button>
+
+                  <div class="task-display">
+                        <button class="tick-manager" id="tickmanager" onclick="ontickinsidemanager()">
+                              <img src="images/check-solid-white.svg" alt="">
+                        </button>
+                        <!-- <input type="text" id="task-text"> -->
+                        <textarea name="" cols="30" rows="2" id="task-text"></textarea>
+                  </div>
+            </div>
+
+            <div class="taskmanagerbut" onclick="onimportantinsidemanager()">
+                  <img src="images/star-regular-dark.svg" alt="" id="impimage">
+                  <p>Mark as Important</p>
+            </div>
+
+            <div class="taskmanagerbut" onclick="opendeletebox()">
+                  <img src="images/trash-solid.svg" alt="">
+                  <p>Delete Task</p>
+            </div>
+
+            <div id="taskmanagerdatebound">
+                  <p id="taskmanagerdate">Created on </p>
+            </div>
+
+      </div>
+
+      <div id="confirmdeletebox">
+            <div class="blurdeletebox"></div>
+            <div class="deletebox">
+                  <h3>Are you sure?</h3>
+                  <p>This task will be permanently deleted</p>
+                  <div class="boundbuttondeletebox">
+                        <button onclick="closedeletebox()">Cancel</button>
+                        <button onclick="deletetaskfrombox()">Delete</button>
+                  </div>
+            </div>
+      </div>
+
+      <!-- JavaScript files -->
+      <!-- <script>
+            if ('serviceWorker' in navigator) {
+                  window.addEventListener('load', function () {
+                        navigator.serviceWorker.register('firebase-messaging-sw.js')
+                              .then(reg => {
+                                    console.log('Service worker registered! 😎', reg);
+                              })
+                              .catch(err => {
+                                    console.log('😥 Service worker registration failed: ', err);
+                              });
+                  });
+            }
+      </script>
+
+      <script>
+            const messaging = firebase.messaging();
+            messaging.requestPermission().then(function () {
+                  console.log('Notification permission granted.');
+                  return messaging.getToken();
+            })
+                  .then(function (token) {
+                        console.log(token)
+                  })
+                  .catch(function (err) {
+                        console.log('Unable to get permission to notify.', err);
+                  });
+      </script> -->
+
+
+      <script src="js/header.js"></script>
+      <script src="js/sidenav.js"></script>
+      <script src="js/taskgroupcontainer.js"></script>
+      <script>
+            let user;
+            let root;
+            let rootdbref;
+            let obtainnooftasks;
+            firebase.auth().onAuthStateChanged(User => {
+                  if (User) {
+                        console.log(User.uid);
+                        user = firebase.auth().currentUser;
+                        root = firebase.database().ref('users/' + user.uid);
+                        rootdbref = root.child('Tasks');
+                        obtainnooftasks = rootdbref.child('nooftasks');
+                        initTasks();
+                  }
+                  else {
+                        console.log("Not Signed In");
+                        window.location = "index.html";
+                  }
+            })
+
+            // For Logout
+            function logout() {
+                  firebase.auth().signOut();
+                  window.location = "index.html";
+            }
+      </script>
+      <script src="js/addtask.js"></script>
+      <script src="js/tasks.js"></script>
+      <script src="js/taskmanager.js"></script>
+      <script src="js/dropdown.js"></script>
+
+</body>
+
+</html>

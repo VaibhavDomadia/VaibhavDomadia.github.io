@@ -1,0 +1,7 @@
+@media only screen and (min-width: 800px) {
+      .listname {
+            width: 50%;
+            height: 40%;
+            padding: 16px;
+      }
+}

@@ -1,0 +1,14 @@
+@media only screen and (max-width: 800px) {
+      .sidenav {
+            width: 0%;
+            visibility: hidden;
+      }
+
+      .sidenavopen {
+            position: absolute;
+            width: 80%;
+            z-index: 15;
+            visibility: visible;
+            transition: 0.3s;
+      }
+}

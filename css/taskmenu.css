@@ -1,0 +1,39 @@
+.menu-task {
+      background-color: rgba(0,0,0,0.6);
+      list-style: none;
+      padding: 8px;
+      margin: 0px;
+      border-radius: 8px;
+      position: absolute;
+      display: none;
+}
+
+.menu-task > li {
+      display: grid;
+      grid-template-columns: 32px auto;
+      color: white;
+      font-size: 16px;
+      font-family: Helvetica,"Helvetica Neue",Verdana, Geneva, Tahoma, sans-serif;
+      padding: 8px;
+      margin: 2px;
+      border-radius: 8px;
+}
+
+.menu-task > li > img {
+      align-self: center;
+}
+
+.menu-task > li > p {
+      margin: 0px;
+      align-self: center;
+}
+
+.menu-task >li:hover {
+      background-color: var(--theme-color);
+      color: rgba(0,0,0,0.6);
+}
+
+.icon-specific {
+      width: 16px;
+      height: 16px;
+}
